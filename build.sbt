@@ -1,4 +1,4 @@
-name := """final-project-starter"""
+name := """golf-app"""
 
 version := "1.0-SNAPSHOT"
 

@@ -1,4 +1,4 @@
-# play-final-project-starter
+# golf-app
 
 This is a starter application to get you going on your final project.
 
