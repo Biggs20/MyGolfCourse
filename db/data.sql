@@ -276,8 +276,4 @@ VALUES      (1001, 2, 8, 49.99, 4, 199.96, '2017-11-01'),
             (1199, 4, 6, 44.99, 5, 224.95, '2017-05-08'),
             (1200, 2, 9, 49.99, 3, 149.97, '2018-02-06');
 
-INSERT INTO membershipamenity
-            (membershipAmenityId, membershipId, amenityId)
-
-
 
