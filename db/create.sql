@@ -33,9 +33,9 @@ CREATE TABLE course (
 CREATE TABLE product (
                 productId INT AUTO_INCREMENT NOT NULL,
                 productName VARCHAR(30) NOT NULL,
-                price DECIMAL NOT NULL,
+                price DECIMAL(4, 2) NOT NULL,
                 brand VARCHAR(30) NOT NULL,
-                style VARCHAR(30) NOT NULL,
+                category VARCHAR(30) NOT NULL,
                 picture LONGBLOB,
                 PRIMARY KEY (productId)
 );
