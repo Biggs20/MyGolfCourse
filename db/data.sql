@@ -45,7 +45,7 @@ VALUES      (1, 'Titleist ProV1', 49.99, 'Titleist', 'Golf Balls'),
 INSERT INTO membership
             (membershipId, membershipName, membershipPrice, description)
 VALUES      (1, 'Full Membership', 245.00, 'Full privileges for applicant, spouse, and all unmarried, dependent children under age 21, living at home'),
-            (2,'Corporate Membership', 245.00, 'Full privileges for individual officers or staff of a Company or Corporation. Memberships are assigned to an individual, belong to the Company, and are transferable. The family of a member will be covered under the membership'),
+            (2, 'Corporate Membership', 245.00, 'Full privileges for individual officers or staff of a Company or Corporation. Memberships are assigned to an individual, belong to the Company, and are transferable. The family of a member will be covered under the membership'),
             (3, 'Junior Membership', 165.00, 'Ages thirty four and under'),
             (4, 'Senior Membership', 245.00, 'Fifty-five and over'),
             (5, 'Social Membership', 2.91, 'Social membership offers dining privileges to applicant, spouse, & all unmarried, dependent children under the age of 21 living at home')
