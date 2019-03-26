@@ -77,14 +77,6 @@ CREATE TABLE membership (
 );
 
 
-CREATE TABLE membershipamenity (
-                membershipAmenityId INT NOT NULL,
-                membershipId INT NOT NULL,
-                amenityId INT NOT NULL,
-                PRIMARY KEY (membershipAmenityId)
-);
-
-
 CREATE TABLE member (
                 memberId INT AUTO_INCREMENT NOT NULL,
                 lastName VARCHAR(20) NOT NULL,
@@ -108,6 +100,7 @@ CREATE TABLE orderdetail (
                 unitPrice DECIMAL(8) NOT NULL,
                 quantity INT NOT NULL,
                 extendedPrice DECIMAL(8,2) NOT NULL,
+                datePurchased DATE,
                 PRIMARY KEY (orderNumber)
 );
 
@@ -130,19 +123,7 @@ REFERENCES product (productId)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
-ALTER TABLE membershipamenity ADD CONSTRAINT amenity_membershipamenity_fk
-FOREIGN KEY (amenityId)
-REFERENCES amenity (amenityId)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION;
-
 ALTER TABLE member ADD CONSTRAINT memberships_members_fk
-FOREIGN KEY (membershipId)
-REFERENCES membership (membershipId)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION;
-
-ALTER TABLE membershipamenity ADD CONSTRAINT memberships_membershipamenity_fk
 FOREIGN KEY (membershipId)
 REFERENCES membership (membershipId)
 ON DELETE NO ACTION
