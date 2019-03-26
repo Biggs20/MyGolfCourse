@@ -33,9 +33,9 @@ CREATE TABLE course (
 CREATE TABLE product (
                 productId INT AUTO_INCREMENT NOT NULL,
                 productName VARCHAR(30) NOT NULL,
-                price DECIMAL(4, 2) NOT NULL,
+                price DECIMAL(4) NOT NULL,
                 brand VARCHAR(30) NOT NULL,
-                category VARCHAR(30) NOT NULL,
+                style VARCHAR(30) NOT NULL,
                 picture LONGBLOB,
                 PRIMARY KEY (productId)
 );
@@ -44,7 +44,7 @@ CREATE TABLE product (
 CREATE TABLE amenity (
                 amenityId INT NOT NULL,
                 picture LONGBLOB,
-                membershipId INT NOT NULL,
+                membershipIdRequired VARCHAR(5) NOT NULL,
                 amenityName VARCHAR(30) NOT NULL,
                 openHours TIME,
                 PRIMARY KEY (amenityId)
@@ -60,15 +60,17 @@ CREATE TABLE hole (
                 blackTeeLength INT NOT NULL,
                 courseId INT NOT NULL,
                 par INT NOT NULL,
-                picture LONGBLOB,
                 mensHandicap INT NOT NULL,
                 womensHandicap VARCHAR NOT NULL,
+                description VARCHAR(300) NOT NULL,
+                picture LONGBLOB,
                 PRIMARY KEY (holeNumber)
 );
 
 
 CREATE TABLE membership (
                 membershipId INT AUTO_INCREMENT NOT NULL,
+                description VARCHAR(200) NOT NULL,
                 membershipName VARCHAR(30) NOT NULL,
                 membershipPrice DECIMAL NOT NULL,
                 PRIMARY KEY (membershipId)
