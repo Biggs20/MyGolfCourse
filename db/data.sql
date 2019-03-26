@@ -71,3 +71,19 @@ VALUES      (1, 'Golf Course', '1-4', 'Monday: 11:30 a.m - Sunset, Tuesday thru 
             (2, 'Fitness Center', '1-5', 'All Week: 4:00 a.m. - 11:00 p.m.'),
             (3, 'Restaurant', '1-5', 'Monday: 11:00 a.m. - 10:00 p.m., Tuesday thru Saturday: 11:00 a.m. - 10:00 p.m., Sunday: 11:00 a.m. - 8:00 p.m.'),
             (4, 'Pool', '1-5', 'Memorial Day thru Labor Day: 10:00 a.m. - 7:00 p.m.');
+
+
+INSERT INTO orderdetail
+            (orderNumber, productId, memberId, unitPrice, quantity, extendedPrice)
+VALUES      (1, 1, 1, 49.99, 2, 99.98),
+            (2, 3, 2, 44.99, 1, 44.99),
+            (3, 2, 1, 49.99, 1, 44.99),
+            (4, 6, 7, 37.99, 5, 189.95),
+            (5, 4, 3, 44.99, 3, 134.97),
+            (6, 5, 9, 37.99, 2, 75.98),
+            (7, 1, 10, 49.99, 5, 249.95),
+            (8, 1, 5, 49.99, 1, 49.99),
+            (9, 2, 3, 49.99, 2, 99.98),
+            (10, 4, 1, 44.99, 5, 224.95);
+
+

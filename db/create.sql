@@ -105,8 +105,9 @@ CREATE TABLE orderdetail (
                 orderNumber INT DEFAULT 100 NOT NULL,
                 productId INT NOT NULL,
                 memberId INT NOT NULL,
-                salePrice DECIMAL NOT NULL,
+                unitPrice DECIMAL(8) NOT NULL,
                 quantity INT NOT NULL,
+                extendedPrice DECIMAL(8,2) NOT NULL,
                 PRIMARY KEY (orderNumber)
 );
 
