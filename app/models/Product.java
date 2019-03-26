@@ -11,7 +11,7 @@ public class Product
     private int productId;
 
     private String roductName;
-    private BigDecimal price; 
+    private BigDecimal price;
     private String brand;
     private String category;
 

@@ -67,7 +67,7 @@ VALUES      (1, 'Biggerstaff','Bryce', '3040 Pebble Beach Rd', 'Conway', 'AR', '
 
 INSERT INTO amenity
             (amenityId, amenityName, membershipIdRequired, openHours)
-VALUES      (1, 'Golf Course', '1-4', )
-            (2, 'Fitness Center', '1-5', )
-            (3, 'Restaurant', '1-5', )
-            (4, 'Pool', '1-5', )
+VALUES      (1, 'Golf Course', '1-4', 'Monday: 11:30 a.m - Sunset, Tuesday thru Friday: 7:30 a.m. - Sunset, Saturday & Sunday: 7:00 a.m. - Sunset'),
+            (2, 'Fitness Center', '1-5', 'All Week: 4:00 a.m. - 11:00 p.m.'),
+            (3, 'Restaurant', '1-5', 'Monday: 11:00 a.m. - 10:00 p.m., Tuesday thru Saturday: 11:00 a.m. - 10:00 p.m., Sunday: 11:00 a.m. - 8:00 p.m.'),
+            (4, 'Pool', '1-5', 'Memorial Day thru Labor Day: 10:00 a.m. - 7:00 p.m.');

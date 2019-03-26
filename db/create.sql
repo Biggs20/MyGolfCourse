@@ -46,7 +46,7 @@ CREATE TABLE amenity (
                 picture LONGBLOB,
                 membershipIdRequired VARCHAR(5) NOT NULL,
                 amenityName VARCHAR(30) NOT NULL,
-                openHours TIME,
+                openHours VARCHAR(150) NOT NULL,
                 PRIMARY KEY (amenityId)
 );
 
