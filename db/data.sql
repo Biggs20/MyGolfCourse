@@ -92,7 +92,7 @@ VALUES      (1, 'Golf Course', '1-4', 'Monday: 11:30 a.m - Sunset, Tuesday thru 
 
 INSERT INTO orderdetail
             (orderNumber, productId, memberId, unitPrice, quantity, extendedPrice, datePurchased)
-VALUES      (1001, 2, 8, 49.99, 4, 199.96, '2017-11-01'),
+VALUES      (1001, 2, 8, 49.99, 4, 199.96, '2017-11-02'),
             (1002, 2, 8, 49.99, 1, 49.99, '2018-01-28'),
             (1003, 1, 3, 49.99, 5, 249.95, '2018-03-08'),
             (1004, 4, 6, 44.99, 1, 44.99, '2018-05-20'),
