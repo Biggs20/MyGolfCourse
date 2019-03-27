@@ -39,4 +39,24 @@ public class Product
     {
         return category;
     }
+
+    public void setProductName(String productName)
+    {
+        this.productName = productName;
+    }
+
+    public void setPrice(BigDecimal price)
+    {
+        this.price = price;
+    }
+
+    public void setBrand(String brand)
+    {
+        this.brand = brand;
+    }
+
+    public void setCategory(String category)
+    {
+        this.category = category;
+    }
 }

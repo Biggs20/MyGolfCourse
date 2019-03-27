@@ -1,0 +1,26 @@
+@doctype.render
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add Product</title>
+        <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+        <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Add Product</h2>
+            <br/>
+            <form method="post">@helper.CSRF.formField
+                <input type="text" name="productName"><label> Product Name</label>
+                <br/>
+                <input type="text" name="price"><label> Price</label>
+                <br/>
+                <input type="text" name="brand"><label> Brand</label>
+                <br/>
+                <input type="text" name="category"><label> Category</label>
+                <br/>
+                <input type="submit" value="save">
+            </form>
+        </div>
+    </body>
+</html>
