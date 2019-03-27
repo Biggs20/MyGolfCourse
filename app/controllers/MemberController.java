@@ -18,6 +18,7 @@ public class MemberController extends Controller
     private JPAApi db;
     private FormFactory formFactory;
 
+
     @Inject
     public MemberController(JPAApi db, FormFactory formFactory)
     {
@@ -35,12 +36,14 @@ public class MemberController extends Controller
         return ok(views.html.memberlist.render(members));
     }
 
+
     //routes to receive member sign up page
     @Transactional
     public Result getMemberAdd()
     {
         return ok(views.html.memberadd.render());
     }
+
 
     //creates/ adds the new member to the database
     @Transactional
@@ -58,7 +61,6 @@ public class MemberController extends Controller
         LocalDate dateJoined = LocalDate.parse(form.get("dateJoined"));
         int membershipId = Integer.parseInt(form.get("membershipId"));
         int handicap = Integer.parseInt(form.get("handicap"));
-
 
         member.setLastName(lastName);
         member.setFirstName(firstName);
