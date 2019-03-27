@@ -4,16 +4,45 @@
     <head>
         <meta charset="UTF-8">
         <title>Members</title>
+        <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+        <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <h1>Members</h1>
-        <table>
-            @for(member<-members){
-            <tr>
-                <td>member.getFirstName</td>
-                <td>member.getLastName</td>
-            </tr>
-            }
-        </table>
+        <div class="container">
+            <h1>Members</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Member Id</th>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Phone</th>
+                        <th>Date Joined</th>
+                        <th>Handicap</th>
+                        <th>Membership Id</th>
+                    </tr>
+                </thead>
+
+                @for(member<-members){
+
+                <tr class="small">
+                    <td>@member.getMemberId</td>
+                    <td>@member.getLastName</td>
+                    <td>@member.getFirstName</td>
+                    <td>@member.getAddress</td>
+                    <td>@member.getCity</td>
+                    <td>@member.getStateId</td>
+                    <td>@member.getPhoneNumber</td>
+                    <td>@member.getDateJoined</td>
+                    <td>@member.getHandicap</td>
+                    <td>@member.getMembershipId</td>
+                </tr>
+                }
+            </table>
+
+        </div>
     </body>
 </html>
