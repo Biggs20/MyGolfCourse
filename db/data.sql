@@ -71,13 +71,13 @@ VALUES      (1, 'Biggerstaff','Bryce', '3040 Pebble Beach Rd', 'Conway', 'AR', '
             (11, 'McKinzie', 'Ethan', '43 Danner Rd', 'West Memphis', 'AR', '4799800098', '2019-01-01', 3, 20),
             (12, 'Strobbe', 'Landon', '6767 Breckenridge Rd', 'Denver', 'CO', '8709847202', '2019-02-02', 3, 25),
             (13, 'McClain', 'Landon', '1234 Anywhere Ave', 'Conway', 'AR', '5015015010', '2016-07-21', 3, 6),
-            (14, 'Moix', 'Daniel', 'Brockington Ave', 'Conway', 'AR', '5018974040', '2015-04-07', 3, 5),
-            (15, 'Ashby', 'Logan', 'Long Hair Rd', 'Maumelle', 'AR', '8700099009', '2018-04-01', 3, 10),
-            (16, 'Braune', 'Jonathan', 'Chenal Ave', 'Little Rock', 'AR', '5018789746', '2019-03-05', 3, 25),
+            (14, 'Moix', 'Daniel', '1111 Brockington Ave', 'Conway', 'AR', '5018974040', '2015-04-07', 3, 5),
+            (15, 'Ashby', 'Logan', '567 Long Hair Rd', 'Maumelle', 'AR', '8700099009', '2018-04-01', 3, 10),
+            (16, 'Braune', 'Jonathan', '1 Chenal Ave', 'Little Rock', 'AR', '5018789746', '2019-03-05', 3, 25),
             (17, 'Cole', 'Zac', '4565 Marine Dr', 'Corpus Cristi', 'TX', '5015456565', '2017-10-20', 3, 15),
-            (18, 'Votolato', 'Doug', 'Cowboys Rd', 'Flower Mound', 'TX', '4674564567', '2019-03-12', 3, 28),
-            (19, 'Ariola', 'Logan', 'Forlife Rd', 'Prairie Grove', 'AR', '4799998899', '2016-04-06', 3, 13),
-            (20, 'Hill', 'Hill', 'Lefty Ln', 'Fort Worth', 'TX', '3677654567', '2019-03-025', 3, 12);
+            (18, 'Votolato', 'Doug', '13 Cowboys Rd', 'Flower Mound', 'TX', '4674564567', '2019-03-12', 3, 28),
+            (19, 'Ariola', 'Logan', '345 Forlife Rd', 'Prairie Grove', 'AR', '4799998899', '2016-04-06', 3, 13),
+            (20, 'Hill', 'Hill', '210 Lefty Ln', 'Fort Worth', 'TX', '3677654567', '2019-03-025', 3, 12);
 
 
 
