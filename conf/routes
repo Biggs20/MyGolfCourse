@@ -4,7 +4,7 @@
 
 # An example controller showing a sample home page
 
-GET     /member/:id                     controllers.MemberController.getMember(id:Integer)
+GET     /members                        controllers.MemberController.getMember
 
 GET     /                               controllers.TestController.getTest
 POST    /                               controllers.TestController.postTest

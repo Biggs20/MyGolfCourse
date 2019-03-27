@@ -9,6 +9,7 @@ import play.mvc.Result;
 
 import javax.inject.Inject;
 import javax.persistence.TypedQuery;
+import java.util.List;
 
 public class MemberController extends Controller
 {
@@ -23,12 +24,11 @@ public class MemberController extends Controller
     }
 
     @Transactional(readOnly = true)
-    public Result getMember(int memberId)
+    public Result getMember()
     {
-        TypedQuery<Member> query = db.em().createQuery("SELECT m FROM Member m WHERE memberId = :memberId", Member.class);
-        query.setParameter("memberId", memberId);
-        Member member = query.getSingleResult();
+        TypedQuery<Member> query = db.em().createQuery("SELECT m FROM Member m ORDER BY lastName", Member.class);
+        List<Member> members = query.getResultList();
 
-        return ok(views.html.members.render(member));
+        return ok(views.html.members.render(members));
     }
 }
