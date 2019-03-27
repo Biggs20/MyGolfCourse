@@ -71,4 +71,49 @@ public class Member
     {
         return handicap;
     }
+
+    public void setLastName(String lastName)
+    {
+        this.lastName = lastName;
+    }
+
+    public void setFirstName(String firstName)
+    {
+        this.firstName = firstName;
+    }
+
+    public void setAddress(String address)
+    {
+        this.address = address;
+    }
+
+    public void setCity(String city)
+    {
+        this.city = city;
+    }
+
+    public void setStateId(String stateId)
+    {
+        this.stateId = stateId;
+    }
+
+    public void setPhoneNumber(String phoneNumber)
+    {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setDateJoined(LocalDate dateJoined)
+    {
+        this.dateJoined = dateJoined;
+    }
+
+    public void setMembershipId(int membershipId)
+    {
+        this.membershipId = membershipId;
+    }
+
+    public void setHandicap(int handicap)
+    {
+        this.handicap = handicap;
+    }
 }
