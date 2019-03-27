@@ -7,6 +7,7 @@
 GET     /memberlist                     controllers.MemberController.getMember
 GET     /memberadd                      controllers.MemberController.getMemberAdd
 POST    /memberadd                      controllers.MemberController.postMemberAdd
+GET     /productlist                    controllers.ProductController.getProducts
 
 GET     /                               controllers.TestController.getTest
 POST    /                               controllers.TestController.postTest

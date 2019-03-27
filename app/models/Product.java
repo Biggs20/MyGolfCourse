@@ -10,7 +10,7 @@ public class Product
     @Id
     private int productId;
 
-    private String roductName;
+    private String productName;
     private BigDecimal price;
     private String brand;
     private String category;
@@ -20,9 +20,9 @@ public class Product
         return productId;
     }
 
-    public String getRoductName()
+    public String getProductName()
     {
-        return roductName;
+        return productName;
     }
 
     public BigDecimal getPrice()
