@@ -3,6 +3,7 @@ INSERT INTO course
 VALUES      (1, 'Centennial Valley Country Club', '1600 Centennial Club Dr,', 'Conway', 'AR')
 
 
+
 INSERT INTO hole
             (holeNumber, redTeeLength, goldTeeLength, whiteTeeLength, blueTeeLength, blackTeeLength, courseId, par, mensHandicap, womensHandicap, description)
 VALUES      (1, 272, 289, 339, 373, 394, 1, 4, 7, 5, 'Great starting hole that provides an opportunity for success or emotional instability. Players need a well placed drive down the left on this straight away hole. Water right on drive and second make the left look good. Making par is a good start to your round'),
@@ -25,11 +26,13 @@ VALUES      (1, 272, 289, 339, 373, 394, 1, 4, 7, 5, 'Great starting hole that p
             (18, 223, 276, 339, 355, 380, 1, 4, 12, 14, 'The finish to a good test of your golfing skills. Drive down the fairway left or attempt the carry over the water on the right. A great drive sets up the hole for a final birdie chance with a short iron approach to a flat green guarded by a front bunker');
 
 
+
 INSERT INTO courselength
             (courseId, redFrontNineLength, redBackNineLength, redTotalLength, goldFrontNineLength, goldBackNineLength, goldTotalLength,
             whiteFrontNineLength, whiteBackNineLength, whiteTotalLength, blueFrontNineLength, blueBackNineLength, blueTotalLength,
             blackFrontNineLength, blackBackNineLength, blackTotalLength)
 VALUES      (1, 2266, 2263, 4529, 2516, 2580, 5096, 3006, 3015, 6021, 3269, 3260, 6529, 3502, 3455, 6957);
+
 
 
 INSERT INTO product
@@ -42,6 +45,7 @@ VALUES      (1, 'Titleist ProV1', 49.99, 'Titleist', 'Golf Balls'),
             (6, 'Bridgestone Tour B X', 37.99, 'Bridgestone','Golf Balls')
 
 
+
 INSERT INTO membership
             (membershipId, membershipName, membershipPrice, description)
 VALUES      (1, 'Full Membership', 245.00, 'Full privileges for applicant, spouse, and all unmarried, dependent children under age 21, living at home'),
@@ -49,6 +53,7 @@ VALUES      (1, 'Full Membership', 245.00, 'Full privileges for applicant, spous
             (3, 'Junior Membership', 165.00, 'Ages thirty four and under'),
             (4, 'Senior Membership', 245.00, 'Fifty-five and over'),
             (5, 'Social Membership', 2.91, 'Social membership offers dining privileges to applicant, spouse, & all unmarried, dependent children under the age of 21 living at home')
+
 
 
 INSERT INTO member
@@ -62,7 +67,18 @@ VALUES      (1, 'Biggerstaff','Bryce', '3040 Pebble Beach Rd', 'Conway', 'AR', '
             (7, 'Moon', 'Marshall', '3454 Draw Dr', 'Conway', 'AR', '5014750970', '2018-09-30', 3, 7),
             (8, 'Lefler', 'Matt', '1111 Hybrid Ln', 'Conway', 'AR', '5017776666', '2018-01-01', 3, 10),
             (9, 'Blackwell', 'JT', '2222 Long Swing Ln', 'Conway', 'AR', '5014567123', '2017-06-11', 3, 10),
-            (10, 'Alex', 'Smith', '546 Creek Dr', 'Conway', 'AR', '5010980099', '2018-03-30', 3, 10);
+            (10, 'Smith', 'Alex', '546 Creek Dr', 'Conway', 'AR', '5010980099', '2018-03-30', 3, 10),
+            (11, 'McKinzie', 'Ethan', '43 Danner Rd', 'West Memphis', 'AR', '4799800098', '2019-01-01', 3, 20),
+            (12, 'Strobbe', 'Landon', '6767 Breckenridge Rd', 'Denver', 'CO', '8709847202', '2019-02-02', 3, 25),
+            (13, 'McClain', 'Landon', '1234 Anywhere Ave', 'Conway', 'AR', '5015015010', '2016-07-21', 3, 6),
+            (14, 'Moix', 'Daniel', 'Brockington Ave', 'Conway', 'AR', '5018974040', '2015-04-07', 3, 5),
+            (15, 'Ashby', 'Logan', 'Long Hair Rd', 'Maumelle', 'AR', '8700099009', '2018-04-01', 3, 10),
+            (16, 'Braune', 'Jonathan', 'Chenal Ave', 'Little Rock', 'AR', '5018789746', '2019-03-05', 3, 25),
+            (17, 'Cole', 'Zac', '4565 Marine Dr', 'Corpus Cristi', 'TX', '5015456565', '2017-10-20', 3, 15),
+            (18, 'Votolato', 'Doug', 'Cowboys Rd', 'Flower Mound', 'TX', '4674564567', '2019-03-12', 3, 28),
+            (19, 'Ariola', 'Logan', 'Forlife Rd', 'Prairie Grove', 'AR', '4799998899', '2016-04-06', 3, 13),
+            (20, 'Hill', 'Hill', 'Lefty Ln', 'Fort Worth', 'TX', '3677654567', '2019-03-025', 3, 12);
+
 
 
 INSERT INTO amenity
@@ -71,6 +87,7 @@ VALUES      (1, 'Golf Course', '1-4', 'Monday: 11:30 a.m - Sunset, Tuesday thru 
             (2, 'Fitness Center', '1-5', 'All Week: 4:00 a.m. - 11:00 p.m.'),
             (3, 'Restaurant', '1-5', 'Monday: 11:00 a.m. - 10:00 p.m., Tuesday thru Saturday: 11:00 a.m. - 10:00 p.m., Sunday: 11:00 a.m. - 8:00 p.m.'),
             (4, 'Pool', '1-5', 'Memorial Day thru Labor Day: 10:00 a.m. - 7:00 p.m.');
+
 
 
 INSERT INTO orderdetail
@@ -275,5 +292,3 @@ VALUES      (1001, 2, 8, 49.99, 4, 199.96, '2017-11-01'),
             (1198, 1, 8, 49.99, 2, 99.98, '2018-07-25'),
             (1199, 4, 6, 44.99, 5, 224.95, '2017-05-08'),
             (1200, 2, 9, 49.99, 3, 149.97, '2018-02-06');
-
-
