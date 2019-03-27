@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Member;
+import play.Logger;
 import play.data.DynamicForm;
 import play.data.FormFactory;
 import play.db.jpa.JPAApi;
@@ -26,7 +27,8 @@ public class MemberController extends Controller
         this.formFactory = formFactory;
     }
 
-    //routes to memberlist.html
+
+    //routes to member list
     @Transactional(readOnly = true)
     public Result getMember()
     {
@@ -61,6 +63,15 @@ public class MemberController extends Controller
         LocalDate dateJoined = LocalDate.parse(form.get("dateJoined"));
         int membershipId = Integer.parseInt(form.get("membershipId"));
         int handicap = Integer.parseInt(form.get("handicap"));
+
+        Logger.debug(lastName);
+        Logger.debug(firstName);
+        Logger.debug(address);
+        Logger.debug(city);
+        Logger.debug(stateId);
+        Logger.debug(phoneNumber);
+        Logger.debug(String.valueOf(membershipId));
+        Logger.debug(String.valueOf(handicap));
 
         member.setLastName(lastName);
         member.setFirstName(firstName);
