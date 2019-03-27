@@ -23,12 +23,13 @@ public class MemberController extends Controller
         this.formFactory = formFactory;
     }
 
+    //routes to memberlist.html
     @Transactional(readOnly = true)
     public Result getMember()
     {
-        TypedQuery<Member> query = db.em().createQuery("SELECT m FROM Member m ORDER BY lastName", Member.class);
+        TypedQuery<Member> query = db.em().createQuery("SELECT m FROM Member m ORDER BY memberId", Member.class);
         List<Member> members = query.getResultList();
 
-        return ok(views.html.members.render(members));
+        return ok(views.html.memberlist.render(members));
     }
 }
