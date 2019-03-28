@@ -14,6 +14,7 @@ GET     /productlist                    controllers.ProductController.getProduct
 GET     /productadd                     controllers.ProductController.getProductAdd
 POST    /productadd                     controllers.ProductController.postProductAdd
 
+GET     /map                            controllers.TestController.getMap
 GET     /                               controllers.TestController.getTest
 POST    /                               controllers.TestController.postTest
 

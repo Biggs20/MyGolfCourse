@@ -57,4 +57,12 @@ public class TestController extends Controller
 
         return redirect("/testdb");
     }
+
+    @Transactional
+    public Result getMap()
+    {
+        return ok(views.html.map.render());
+    }
+
+
 }
