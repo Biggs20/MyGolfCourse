@@ -5,6 +5,7 @@
 
 # An example controller showing a sample home page
 
+GET     /contactinfo                    controllers.HomeController.getContactInfo
 GET     /home                           controllers.HomeController.getHome
 GET     /memberlist                     controllers.MemberController.getMember
 GET     /memberadd                      controllers.MemberController.getMemberAdd

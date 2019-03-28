@@ -27,4 +27,10 @@ public class HomeController extends Controller
     {
         return ok(views.html.home.render());
     }
+
+    @Transactional
+    public Result getContactInfo()
+    {
+        return ok(views.html.contactinfo.render());
+    }
 }
