@@ -1,3 +1,4 @@
+@(amenities : List[Amenity])
 @doctype.render
 <html lang="en">
     <head>
@@ -47,5 +48,22 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+            <h1>Amenities</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Amenity</th>
+                        <th>Open Hours</th>
+                    </tr>
+                </thead>
+                @for(amenity<-amenities){
+                <tr class="small">
+                    <td>@amenity.getAmenityName</td>
+                    <td>@amenity.getOpenHours</td>
+                </tr>
+                }
+            </table>
+        </div>
     </body>
 </html>

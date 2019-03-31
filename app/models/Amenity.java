@@ -10,7 +10,7 @@ public class Amenity
     private int amenityId;
 
     private String amenityName;
-    private String membershipRequired;
+    private String membershipIdRequired;
     private String openHours;
 
     public int getAmenityId()
@@ -23,9 +23,9 @@ public class Amenity
         return amenityName;
     }
 
-    public String getMembershipRequired()
+    public String getMembershipIdRequired()
     {
-        return membershipRequired;
+        return membershipIdRequired;
     }
 
     public String getOpenHours()
