@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+@(holes : List[Hole])
+@doctype.render
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -28,6 +29,9 @@
                             <a class="nav-link" href="course">The Course</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="amenity">Amenities</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="memberlist">Members</a>
                         </li>
                         <li class="nav-item">
@@ -43,5 +47,41 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+        </div>
+        <!-- /.container -->
+        <div class="container">
+            <h1>Holes</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Hole Number</th>
+                        <th>Red Tee Length</th>
+                        <th>Gold Tee Length</th>
+                        <th>White Tee Length</th>
+                        <th>Blue Tee Length</th>
+                        <th>Black Tee Length</th>
+                        <th>Par</th>
+                        <th>Mens Handicap</th>
+                        <th>Womens Handicap</th>
+                        <th>Hole Description</th>
+                    </tr>
+                </thead>
+                @for(hole<-holes){
+                <tr class="small">
+                    <td>@hole.getHoleNumber</td>
+                    <td>@hole.getRedTeeLength</td>
+                    <td>@hole.getGoldTeeLength</td>
+                    <td>@hole.getWhiteTeeLength</td>
+                    <td>@hole.getBlueTeeLength</td>
+                    <td>@hole.getBlackTeeLength</td>
+                    <td>@hole.getPar</td>
+                    <td>@hole.getMensHandicap</td>
+                    <td>@hole.getWomensHandicap</td>
+                    <td>@hole.getDescription</td>
+                </tr>
+                }
+            </table>
+        </div>
     </body>
 </html>
