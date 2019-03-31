@@ -18,6 +18,7 @@ public class Hole
     private int par;
     private int mensHandicap;
     private int womensHandicap;
+    private String description;
 
     public int getHoleNumber()
     {
@@ -67,5 +68,10 @@ public class Hole
     public int getWomensHandicap()
     {
         return womensHandicap;
+    }
+
+    public String getDescription()
+    {
+        return description;
     }
 }

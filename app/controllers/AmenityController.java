@@ -8,22 +8,22 @@ import play.mvc.Result;
 
 import javax.inject.Inject;
 
-public class CourseController extends Controller
+public class AmenityController extends Controller
 {
     private JPAApi db;
     private FormFactory formFactory;
 
     @Inject
-    public CourseController(JPAApi db, FormFactory formFactory)
+    public AmenityController(JPAApi db, FormFactory formFactory)
     {
         this.db = db;
         this.formFactory = formFactory;
     }
 
     @Transactional
-    public Result getCourse()
+    public Result getAmenity()
     {
-        return ok(views.html.course.render());
+        return ok(views.html.amenity.render());
     }
 
 }

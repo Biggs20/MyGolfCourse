@@ -5,8 +5,9 @@
 
 # An example controller showing a sample home page
 
+GET     /amenity                        controllers.AmenityController.getAmenity
 GET     /contactinfo                    controllers.HomeController.getContactInfo
-GET     /course                      controllers.CourseController.getCourse
+GET     /course                         controllers.HoleController.getCourse
 GET     /home                           controllers.HomeController.getHome
 GET     /memberlist                     controllers.MemberController.getMember
 GET     /memberadd                      controllers.MemberController.getMemberAdd
