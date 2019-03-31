@@ -8,13 +8,16 @@
 GET     /amenity                        controllers.AmenityController.getAmenity
 GET     /contactinfo                    controllers.HomeController.getContactInfo
 GET     /course                         controllers.HoleController.getCourse
+GET     /fitnesscenter                  controllers.AmenityController.getFitnessCenter
 GET     /home                           controllers.HomeController.getHome
 GET     /memberlist                     controllers.MemberController.getMember
 GET     /memberadd                      controllers.MemberController.getMemberAdd
 POST    /memberadd                      controllers.MemberController.postMemberAdd
+GET     /pool                           controllers.AmenityController.getPool
 GET     /productlist                    controllers.ProductController.getProducts
 GET     /productadd                     controllers.ProductController.getProductAdd
 POST    /productadd                     controllers.ProductController.postProductAdd
+GET     /restaurant                     controllers.AmenityController.getRestaurant
 
 GET     /map                            controllers.TestController.getMap
 GET     /                               controllers.TestController.getTest

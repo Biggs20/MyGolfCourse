@@ -31,4 +31,22 @@ public class AmenityController extends Controller
 
         return ok(views.html.amenity.render(amenities));
     }
+
+    @Transactional
+    public Result getRestaurant()
+    {
+        return ok(views.html.restaurant.render());
+    }
+
+    @Transactional
+    public Result getFitnessCenter()
+    {
+        return ok(views.html.fitnesscenter.render());
+    }
+
+    @Transactional
+    public Result getPool()
+    {
+        return ok(views.html.pool.render());
+    }
 }

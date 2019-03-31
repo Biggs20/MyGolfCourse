@@ -16,7 +16,8 @@
                 <a class="navbar-brand" href="#">
                     <img src="http://placehold.it/150x50?text=Logo" alt="">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -29,8 +30,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="course">The Course</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="amenity">Amenities</a>
+                        <li class="dropdown">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"> Amenities </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="restaurant">Restaurant</a>
+                                <a class="dropdown-item" href="fitnesscenter">Fitness Center</a>
+                                <a class="dropdown-item" href="pool">Pool</a>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="memberlist">Members</a>

@@ -31,4 +31,13 @@ public class HoleController extends Controller
 
         return ok(views.html.course.render(holes));
     }
+
+    /*@Transactional(readOnly = true)
+    public Result getPicture(int holeNumber)
+    {
+        TypedQuery<Hole> query = db.em().createQuery("SELECT h FROM Hole h WHERE holeNumber = :holeNumber", Hole.class);
+        query.setParameter("holeNumber", holeNumber);
+        Hole hole = query.getSingleResult();
+
+        return ok(hole.getPicture()).as("image/jpeg");*/
 }

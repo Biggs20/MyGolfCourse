@@ -13,6 +13,8 @@ libraryDependencies += "org.webjars.bower" % "leaflet" % "1.4.0"
 
 //GUI
 libraryDependencies += "org.webjars" % "bootstrap" % "4.3.1"
+libraryDependencies += "com.typesafe.play" %% "play-mailer" % "6.0.1"
+libraryDependencies += "com.typesafe.play" %% "play-mailer-guice" % "6.0.1"
 
 //Database
 libraryDependencies += javaJpa

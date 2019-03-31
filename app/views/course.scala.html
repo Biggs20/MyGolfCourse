@@ -56,12 +56,12 @@
                 <thead>
                     <tr>
                         <th>Hole Number</th>
+                        <th>Par</th>
                         <th>Red Tee Length</th>
                         <th>Gold Tee Length</th>
                         <th>White Tee Length</th>
                         <th>Blue Tee Length</th>
                         <th>Black Tee Length</th>
-                        <th>Par</th>
                         <th>Mens Handicap</th>
                         <th>Womens Handicap</th>
                         <th>Hole Description</th>
@@ -70,12 +70,12 @@
                 @for(hole<-holes){
                 <tr class="small">
                     <td>@hole.getHoleNumber</td>
+                    <td>@hole.getPar</td>
                     <td>@hole.getRedTeeLength</td>
                     <td>@hole.getGoldTeeLength</td>
                     <td>@hole.getWhiteTeeLength</td>
                     <td>@hole.getBlueTeeLength</td>
                     <td>@hole.getBlackTeeLength</td>
-                    <td>@hole.getPar</td>
                     <td>@hole.getMensHandicap</td>
                     <td>@hole.getWomensHandicap</td>
                     <td>@hole.getDescription</td>
