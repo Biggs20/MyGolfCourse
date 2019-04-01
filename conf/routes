@@ -20,8 +20,6 @@ GET     /productadd                     controllers.ProductController.getProduct
 POST    /productadd                     controllers.ProductController.postProductAdd
 GET     /restaurant                     controllers.AmenityController.getRestaurant
 
-GET     /weather                        controllers.TestController.getCurrentWeather
-
 GET     /map                            controllers.TestController.getMap
 GET     /                               controllers.TestController.getTest
 POST    /                               controllers.TestController.postTest
