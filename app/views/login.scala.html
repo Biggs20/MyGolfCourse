@@ -1,26 +1,16 @@
 @doctype.render
 <html lang="en">
     <head>
-        <title>Home</title>
-        <meta charset="utf-8">
+        <title>Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
         <script src="/assets/lib/jquery/jquery.min.js"></script>
         <script src="/assets/lib/popper.js/umd/popper.min.js"></script>
         <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
-
-        <!-- <style>
-   /* Make the image fully responsive */
-   .carousel-inner img {
-       width: 100%;
-       height: 250px;
-       object-fit: cover
-   }
-
-         </style>-->
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/login.css">
+        <!------ Include the above in your HEAD tag ---------->
     </head>
     <body>
-        <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-success static-top">
             <div class="container">
                 <a class="navbar-brand" href="#">
@@ -64,51 +54,27 @@
                 </div>
             </div>
         </nav>
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                <!-- Tabs Titles -->
 
-        <!-- Page Content -->
-        <div class="container">
-            <center>
-                <h1 class="mt-4">Centennial Valley Golf Course</h1>
-            </center>
-        </div>
-        <!-- /.container -->
-        <div id="golfCarousel" class="carousel slide" data-ride="carousel">
-
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#golfCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#golfCarouse2" data-slide-to="1"></li>
-                <li data-target="#golfCarouse3" data-slide-to="2"></li>
-            </ol>
-
-            <!-- The slideshow -->
-            <center>
-                <div class="container">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-
-                            <img src="/assets/images/centennial-valley-home.jpg" alt="Centennial1" width="1100"
-                                 height="300">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="/assets/images/centennial-vally-home-2.jpg" alt="Centennial2" width="1100"
-                                 height="300">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="/assets/images/centennial-valley-home-4.jpg" alt="Centennial3" width="1100"
-                                 height="300">
-                        </div>
-                    </div>
-
-                    <!-- Left and right controls -->
-                    <a class="carousel-control-prev" href="#golfCarousel" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#golfCarousel" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
+                <!-- Icon -->
+                <div class="fadeIn first">
+                    <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon"/>
                 </div>
-            </center>
+
+                <!-- Login Form -->
+                <form>
+                    <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+                    <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+                    <input type="submit" class="fadeIn fourth" value="Log In">
+                </form>
+
+                <!-- Remind Passowrd -->
+                <div id="formFooter">
+                    <a class="underlineHover" href="#">Forgot Password?</a>
+                </div>
+            </div>
         </div>
     </body>
 </html>

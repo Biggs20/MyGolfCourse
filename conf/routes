@@ -10,6 +10,7 @@ GET     /contactinfo                    controllers.HomeController.getContactInf
 GET     /course                         controllers.HoleController.getCourse
 GET     /fitnesscenter                  controllers.AmenityController.getFitnessCenter
 GET     /home                           controllers.HomeController.getHome
+GET     /login                          controllers.TestController.getLogin
 GET     /memberlist                     controllers.MemberController.getMember
 GET     /memberadd                      controllers.MemberController.getMemberAdd
 POST    /memberadd                      controllers.MemberController.postMemberAdd
@@ -18,6 +19,8 @@ GET     /productlist                    controllers.ProductController.getProduct
 GET     /productadd                     controllers.ProductController.getProductAdd
 POST    /productadd                     controllers.ProductController.postProductAdd
 GET     /restaurant                     controllers.AmenityController.getRestaurant
+
+GET     /weather                        controllers.TestController.getCurrentWeather
 
 GET     /map                            controllers.TestController.getMap
 GET     /                               controllers.TestController.getTest

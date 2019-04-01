@@ -9,7 +9,7 @@
     </head>
     <body>
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success static-top">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="http://placehold.it/150x50?text=Logo" alt="">
@@ -23,11 +23,17 @@
                             <a class="nav-link" href="home">Home
                                 <span class="sr-only">(current)</span>
                             </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="course">The Course</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="amenity">Amenities</a>
+                        <li class="dropdown">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"> Amenities </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="restaurant">Restaurant</a>
+                                <a class="dropdown-item" href="fitnesscenter">Fitness Center</a>
+                                <a class="dropdown-item" href="pool">Pool</a>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="memberlist">Members</a>
@@ -39,7 +45,7 @@
                             <a class="nav-link" href="contactinfo">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sign In</a>
+                            <a class="nav-link" href="login">Login</a>
                         </li>
                     </ul>
                 </div>
