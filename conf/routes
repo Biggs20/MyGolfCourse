@@ -16,6 +16,7 @@ GET     /home                           controllers.HomeController.getHome
 GET     /memberlist                     controllers.MemberController.getMember
 GET     /memberadd                      controllers.MemberController.getMemberAdd
 POST    /memberadd                      controllers.MemberController.postMemberAdd
+GET     /orders                         controllers.ProductController.getOrderDetail
 GET     /pool                           controllers.AmenityController.getPool
 GET     /productlist                    controllers.ProductController.getProducts
 GET     /productadd                     controllers.ProductController.getProductAdd

@@ -1,5 +1,6 @@
 package controllers;
 
+import models.OrderDetail;
 import models.Product;
 import play.Logger;
 import play.data.DynamicForm;
@@ -81,6 +82,16 @@ public class ProductController extends Controller
         Product product = query.getSingleResult();
 
         return ok(product.getPicture()).as("image/jpeg");
+    }
+
+
+    @Transactional(readOnly = true)
+    public Result getOrderDetail()
+    {
+        TypedQuery<OrderDetail> query = db.em().createQuery("SELECT od FROM OrderDetail od ORDER BY datePurchased", OrderDetail.class);
+        List<OrderDetail> orders = query.getResultList();
+
+        return ok(views.html.orders.render(orders));
     }
 
 

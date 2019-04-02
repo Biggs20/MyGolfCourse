@@ -2,34 +2,54 @@ package models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 public class OrderDetail
 {
     @Id
-    private int amenityId;
+    private int orderNumber;
 
-    private String amenityName;
-    private String membershipRequired;
-    private String openHours;
+    private int productId;
+    private int memberId;
+    private int quantity;
+    private BigDecimal extendedPrice;
+    private BigDecimal unitPrice;
+    private LocalDate datePurchased;
 
-    public int getAmenityId()
+    public int getOrderNumber()
     {
-        return amenityId;
+        return orderNumber;
     }
 
-    public String getAmenityName()
+    public int getProductId()
     {
-        return amenityName;
+        return productId;
     }
 
-    public String getMembershipRequired()
+    public int getMemberId()
     {
-        return membershipRequired;
+        return memberId;
     }
 
-    public String getOpenHours()
+    public int getQuantity()
     {
-        return openHours;
+        return quantity;
+    }
+
+    public BigDecimal getExtendedPrice()
+    {
+        return extendedPrice;
+    }
+
+    public BigDecimal getUnitPrice()
+    {
+        return unitPrice;
+    }
+
+    public LocalDate getDatePurchased()
+    {
+        return datePurchased;
     }
 }
