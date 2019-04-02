@@ -27,7 +27,7 @@ public class HomeController extends Controller
     }
 
 
-    @Transactional
+    @Transactional (readOnly = true)
     public Result getHome()
     {
         WeatherResult weatherResult = null;
@@ -64,7 +64,7 @@ public class HomeController extends Controller
         return ok(views.html.home.render(normalTemp, normalSpeed));
     }
 
-    @Transactional
+    @Transactional (readOnly = true)
     public Result getContactInfo()
     {
         return ok(views.html.contactinfo.render());

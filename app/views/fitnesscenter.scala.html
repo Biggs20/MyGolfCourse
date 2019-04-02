@@ -1,10 +1,98 @@
-<!DOCTYPE html>
+@(amenities : List[Amenity])
+@doctype.render
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title>Fitness Center</title>
+        <title>19th Hole Bar & Grill</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+        <style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+        </style>
     </head>
     <body>
-        
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success static-top">
+            <div class="container">
+                <a class="navbar-brand" href="home">
+                    <img src="/assets/images/centennial-valley-logo-2.png" alt="" height="55px" width="200">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="home">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="course">The Course</a>
+                        </li>
+                        <li class="dropdown">
+                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                                Amenities
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="restaurant">Restaurant</a>
+                                <a class="dropdown-item" href="fitnesscenter">Fitness Center</a>
+                                <a class="dropdown-item" href="pool">Pool</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="memberlist">Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="productlist">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contactinfo">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <center>
+                <h2>Fitness Center</h2>
+            </center>
+            <div class="row">
+                <div class="column" style="background-color: white;">
+                    <img src="/assets/images/fitnessCenter.jpg" alt="Centennial1" width="500" height="300">
+
+                </div>
+                <div class="column" style="background-color: white;">
+                    <h3>Open Hours</h3>
+
+                    <p>Sunday thru Saturday 4:00 am - 11:00 p.m.</p>
+
+                </div>
+            </div>
+        </div>
     </body>
 </html>

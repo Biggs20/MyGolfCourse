@@ -32,21 +32,40 @@ public class AmenityController extends Controller
         return ok(views.html.amenity.render(amenities));
     }
 
-    @Transactional
+
+    @Transactional (readOnly = true)
     public Result getRestaurant()
     {
-        return ok(views.html.restaurant.render());
+        TypedQuery<Amenity> query = db.em().createQuery("SELECT a FROM Amenity a WHERE amenityId = 3", Amenity.class);
+        List<Amenity> amenities = query.getResultList();
+
+        return ok(views.html.restaurant.render(amenities));
     }
 
-    @Transactional
+
+    @Transactional (readOnly = true)
     public Result getFitnessCenter()
     {
-        return ok(views.html.fitnesscenter.render());
+        TypedQuery<Amenity> query = db.em().createQuery("SELECT a FROM Amenity a WHERE amenityId = 2", Amenity.class);
+        List<Amenity> amenities = query.getResultList();
+
+        return ok(views.html.fitnesscenter.render(amenities));
     }
 
-    @Transactional
+
+    @Transactional (readOnly = true)
     public Result getPool()
     {
-        return ok(views.html.pool.render());
+        TypedQuery<Amenity> query = db.em().createQuery("SELECT a FROM Amenity a WHERE amenityId = 4", Amenity.class);
+        List<Amenity> amenities = query.getResultList();
+
+        return ok(views.html.pool.render(amenities));
+    }
+
+
+    @Transactional (readOnly = true)
+    public Result getRestaurantMenu()
+    {
+        return ok(views.html.restaurantmenu.render());
     }
 }

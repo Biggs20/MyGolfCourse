@@ -1,32 +1,10 @@
-@(amenities : List[Amenity])
-@doctype.render
+<!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>19th Hole Bar & Grill</title>
+        <title>Menu</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
-        <style>
-* {
-  box-sizing: border-box;
-}
-
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-        </style>
     </head>
     <body>
         <!-- Navigation -->
@@ -77,25 +55,8 @@
         </nav>
         <div class="container">
             <center>
-                <h2>19th Hole Bar & Grill</h2>
+                <embed src="assets/images/restaurantMenu.pdf" width="800px" height="2100px"/>
             </center>
-            <div class="row">
-                <div class="column" style="background-color: white;">
-                    <img src="/assets/images/nineteenthHoleRestaurant.jpg" alt="Centennial1" width="500" height="300">
-                </div>
-                <div class="column" style="background-color: white;">
-                    <h3>Open Hours</h3>
-
-                    <p>Monday: 11:00 a.m. - 10:00 p.m.</p>
-                    <p>Tuesday thru Saturday: 11:00 a.m. - 10:00 p.m. </p>
-                    <p>Sunday: 11:00 a.m. - 8:00 p.m.</p>
-
-                    <h4>Phone: (501) 513-2528</h4>
-
-                    <a href="restaurantmenu" class="btn btn-info" role="button">Menu</a>
-
-                </div>
-            </div>
         </div>
     </body>
 </html>

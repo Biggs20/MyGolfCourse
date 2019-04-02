@@ -40,7 +40,7 @@ public class MemberController extends Controller
 
 
     //routes to receive member sign up page
-    @Transactional
+    @Transactional (readOnly = true)
     public Result getMemberAdd()
     {
         return ok(views.html.memberadd.render());

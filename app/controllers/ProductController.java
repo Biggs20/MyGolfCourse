@@ -40,7 +40,7 @@ public class ProductController extends Controller
     }
 
 
-    @Transactional
+    @Transactional (readOnly = true)
     public Result getProductAdd()
     {
         return ok(views.html.productadd.render());

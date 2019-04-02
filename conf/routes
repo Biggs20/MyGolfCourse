@@ -19,6 +19,7 @@ GET     /productlist                    controllers.ProductController.getProduct
 GET     /productadd                     controllers.ProductController.getProductAdd
 POST    /productadd                     controllers.ProductController.postProductAdd
 GET     /restaurant                     controllers.AmenityController.getRestaurant
+GET     /restaurantmenu                 controllers.AmenityController.getRestaurantMenu
 
 GET     /map                            controllers.TestController.getMap
 GET     /                               controllers.TestController.getTest
