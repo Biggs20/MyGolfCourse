@@ -6,6 +6,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
+        <script src="/assets/lib/jquery/jquery.min.js"></script>
+        <script src="/assets/lib/popper.js/umd/popper.min.js"></script>
+        <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
         <style>
 * {
   box-sizing: border-box;
@@ -49,14 +52,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="course">The Course</a>
                         </li>
-                        <li class="dropdown">
-                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                                Amenities
-                            </button>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Amenities</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="restaurant">Restaurant</a>
                                 <a class="dropdown-item" href="fitnesscenter">Fitness Center</a>
                                 <a class="dropdown-item" href="pool">Pool</a>
+                                <a class="dropdown-item" href="amenity">Amenity Hours</a>
                             </div>
                         </li>
                         <li class="nav-item">
