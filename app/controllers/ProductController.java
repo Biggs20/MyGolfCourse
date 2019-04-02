@@ -82,4 +82,7 @@ public class ProductController extends Controller
 
         return ok(product.getPicture()).as("image/jpeg");
     }
+
+
+
 }

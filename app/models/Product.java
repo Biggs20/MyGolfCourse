@@ -65,4 +65,14 @@ public class Product
     {
         return picture;
     }
+
+    public void setProductId(int productId)
+    {
+        this.productId = productId;
+    }
+
+    public void setPicture(byte[] picture)
+    {
+        this.picture = picture;
+    }
 }

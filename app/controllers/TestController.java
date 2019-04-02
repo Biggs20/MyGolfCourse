@@ -1,5 +1,6 @@
 package controllers;
 
+//import Services.Email;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import models.Test;
 import models.Weather.WeatherResult;
@@ -96,6 +97,22 @@ public class TestController extends Controller
     {
         return ok(views.html.login.render());
     }
+
+
+    //send email for testing
+    /*public Result getSendEmail()
+    {
+        String result = "no go";
+
+        boolean sentIt = Email.sendEmail("Bring it!");
+
+        if(sentIt)
+        {
+            result = "sent it";
+        }
+
+        return ok(result);
+    }*/
 
 
 }

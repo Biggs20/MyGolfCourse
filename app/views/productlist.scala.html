@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Products</title>
+        <title>Golf Shop</title>
         <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
         <script src="/assets/lib/jquery/jquery.min.js"></script>
         <script src="/assets/lib/popper.js/umd/popper.min.js"></script>
@@ -43,7 +43,7 @@
                             <a class="nav-link" href="memberlist">Members</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="productlist">Store</a>
+                            <a class="nav-link" href="productlist">Golf Shop</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contactinfo">Contact</a>
@@ -60,7 +60,7 @@
 
         </div>
         <div class="container">
-            <h1>Products</h1>
+            <h1>Golf Shop</h1>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -69,15 +69,17 @@
                         <th>Price</th>
                         <th>Brand</th>
                         <th>Category</th>
+                        <th> </th>
                     </tr>
                 </thead>
                 @for(product<-products){
                 <tr class="small">
                     <td>@product.getProductId</td>
                     <td>@product.getProductName</td>
-                    <td>@product.getPrice</td>
+                    <td>$@product.getPrice</td>
                     <td>@product.getBrand</td>
                     <td>@product.getCategory</td>
+                    <td><img src="/productpicture/@product.getProductId" width="70" height="70px"></td>
                 </tr>
                 }
             </table>

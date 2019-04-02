@@ -20,10 +20,13 @@ GET     /productadd                     controllers.ProductController.getProduct
 POST    /productadd                     controllers.ProductController.postProductAdd
 GET     /restaurant                     controllers.AmenityController.getRestaurant
 GET     /restaurantmenu                 controllers.AmenityController.getRestaurantMenu
+GET     /store                          controllers.ProductController.getProducts
 
 GET     /map                            controllers.TestController.getMap
 GET     /                               controllers.TestController.getTest
 POST    /                               controllers.TestController.postTest
+#GET    /sendemail                      controllers.TestController.getSendEmail
+GET     /productpicture/:id             controllers.ProductController.getPicture(id:Integer)
 
 GET     /test                           controllers.TestController.getTest
 POST    /test                           controllers.TestController.postTest

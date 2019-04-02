@@ -16,6 +16,9 @@ libraryDependencies += "org.webjars" % "bootstrap" % "4.3.1"
 libraryDependencies += "com.typesafe.play" %% "play-mailer" % "6.0.1"
 libraryDependencies += "com.typesafe.play" %% "play-mailer-guice" % "6.0.1"
 
+//API
+libraryDependencies += "com.amazonaws" % "aws-java-sdk" % "1.11.530"
+
 //Database
 libraryDependencies += javaJpa
 libraryDependencies += javaJdbc
