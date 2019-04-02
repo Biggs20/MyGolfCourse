@@ -71,4 +71,15 @@ public class ProductController extends Controller
 
         return ok("Saved");
     }
+
+
+    @Transactional(readOnly = true)
+    public Result getPicture(int productId)
+    {
+        TypedQuery<Product> query = db.em().createQuery("SELECT p FROM Product p WHERE productId = :productId", Product.class);
+        query.setParameter("productId", productId);
+        Product product = query.getSingleResult();
+
+        return ok(product.getPicture()).as("image/jpeg");
+    }
 }

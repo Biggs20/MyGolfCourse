@@ -14,6 +14,7 @@ public class Product
     private BigDecimal price;
     private String brand;
     private String category;
+    private byte[] picture;
 
     public int getProductId()
     {
@@ -58,5 +59,10 @@ public class Product
     public void setCategory(String category)
     {
         this.category = category;
+    }
+
+    public byte[] getPicture()
+    {
+        return picture;
     }
 }
