@@ -5,12 +5,14 @@
 
 # An example controller showing a sample home page
 
+GET     /login                          controllers.SessionController.getLogin
+POST    /login                          controllers.SessionController.postLogin
+
 GET     /amenity                        controllers.AmenityController.getAmenity
 GET     /contactinfo                    controllers.HomeController.getContactInfo
 GET     /course                         controllers.HoleController.getCourse
 GET     /fitnesscenter                  controllers.AmenityController.getFitnessCenter
 GET     /home                           controllers.HomeController.getHome
-GET     /login                          controllers.TestController.getLogin
 GET     /memberlist                     controllers.MemberController.getMember
 GET     /memberadd                      controllers.MemberController.getMemberAdd
 POST    /memberadd                      controllers.MemberController.postMemberAdd

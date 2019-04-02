@@ -93,10 +93,10 @@ public class TestController extends Controller
 
     }
 
-    public Result getLogin()
+    /*public Result getLogin()
     {
         return ok(views.html.login.render());
-    }
+    }*/
 
 
     //send email for testing
