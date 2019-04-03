@@ -1,4 +1,4 @@
-@(orders : List[OrderDetail])
+@(orders : List[Orders])
 @doctype.render
 <html lang="en">
     <head>
@@ -57,14 +57,18 @@
             </div>
         </nav>
         <div class="container">
+
         </div>
         <!-- /.container -->
         <div class="container">
             <h1>Orders</h1>
+            <input class="form-control" id="myInput" type="text" placeholder="Search..">
             <table class="table table-hover">
-                <thead>
+                <thead class="thead-dark">
+
                     <tr>
                         <th>Order Number</th>
+                        <th>Last Name</th>
                         <th>ProductId</th>
                         <th>MemberId</th>
                         <th>Quantity</th>
@@ -73,9 +77,11 @@
                         <th>Date Purchased</th>
                     </tr>
                 </thead>
+                <tbody id="myTable">
                 @for(order<-orders){
                 <tr class="small">
                     <td>@order.getOrderNumber</td>
+                    <td>@order.getLastName</td>
                     <td>@order.getProductId</td>
                     <td>@order.getMemberId</td>
                     <td>@order.getQuantity</td>
@@ -84,7 +90,19 @@
                     <td>@order.getDatePurchased</td>
                 </tr>
                 }
+                </tbody>
             </table>
         </div>
+        <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+        </script>
     </body>
 </html>

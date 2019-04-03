@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-public class OrderDetail
+public class Orders
 {
     @Id
     private int orderNumber;
@@ -19,6 +19,21 @@ public class OrderDetail
     private BigDecimal extendedPrice;
     private BigDecimal unitPrice;
     private LocalDate datePurchased;
+    private String firstName;
+    private String lastName;
+
+    public Orders(int orderNumber, int productId, int memberId, int quantity, BigDecimal extendedPrice, BigDecimal unitPrice, LocalDate datePurchased, String firstName, String lastName)
+    {
+        this.orderNumber = orderNumber;
+        this.productId = productId;
+        this.memberId = memberId;
+        this.quantity = quantity;
+        this.extendedPrice = extendedPrice;
+        this.unitPrice = unitPrice;
+        this.datePurchased = datePurchased;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
     public int getOrderNumber()
     {
@@ -53,6 +68,16 @@ public class OrderDetail
     public LocalDate getDatePurchased()
     {
         return datePurchased;
+    }
+
+    public String getFirstName()
+    {
+        return firstName;
+    }
+
+    public String getLastName()
+    {
+        return lastName;
     }
 
     public String getBrand()

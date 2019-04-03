@@ -1,6 +1,6 @@
 package controllers;
 
-import models.OrderDetail;
+import models.Orders;
 import models.Product;
 import play.Logger;
 import play.data.DynamicForm;
@@ -41,7 +41,7 @@ public class ProductController extends Controller
     }
 
 
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public Result getProductAdd()
     {
         return ok(views.html.productadd.render());
@@ -88,12 +88,9 @@ public class ProductController extends Controller
     @Transactional(readOnly = true)
     public Result getOrderDetail()
     {
-        TypedQuery<OrderDetail> query = db.em().createQuery("SELECT od FROM OrderDetail od ORDER BY datePurchased", OrderDetail.class);
-        List<OrderDetail> orders = query.getResultList();
-
+        TypedQuery<Orders> query = db.em().createQuery("SELECT NEW Orders(od.orderNumber, od.productId, od.memberId, od.quantity, od.extendedPrice, od.unitPrice, od.datePurchased, m.firstName, m.lastName) FROM OrderDetail od JOIN Member m ON od.memberId = m.memberId " +
+                                                               "ORDER BY datePurchased DESC", Orders.class);
+        List<Orders> orders = query.getResultList();
         return ok(views.html.orders.render(orders));
     }
-
-
-
 }
