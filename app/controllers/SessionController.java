@@ -62,4 +62,9 @@ public class SessionController extends Controller
         return result;
     }
 
+    @Transactional(readOnly = true)
+    public Result getAdmin()
+    {
+        return ok(views.html.admin.render());
+    }
 }

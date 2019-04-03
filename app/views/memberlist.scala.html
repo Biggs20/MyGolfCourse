@@ -39,9 +39,6 @@
                                 <a class="dropdown-item" href="amenity">Amenity Hours</a>
                             </div>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="memberlist">Members</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="productlist">Golf Shop</a>
                         </li>
@@ -51,9 +48,33 @@
                         <li class="nav-item">
                             <a class="nav-link" href="login">Login</a>
                         </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Admin</a>
+                        </li>
                     </ul>
                 </div>
             </div>
+        </nav>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
+
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Admin Tools:</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="memberlist">Members</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="memberadd">Member Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="orders">Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="productadd">Store</a>
+                </li>
+
+            </ul>
         </nav>
 
         <!-- Page Content -->
@@ -62,6 +83,7 @@
         <!-- /.container -->
         <div class="container">
             <h1>Members</h1>
+            <input class="form-control" id="myInput" type="text" placeholder="Search..">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -77,21 +99,37 @@
                         <th>Membership Id</th>
                     </tr>
                 </thead>
-                @for(member<-members){
-                <tr class="small">
-                    <td>@member.getMemberId</td>
-                    <td>@member.getLastName</td>
-                    <td>@member.getFirstName</td>
-                    <td>@member.getAddress</td>
-                    <td>@member.getCity</td>
-                    <td>@member.getStateId</td>
-                    <td>@member.getPhoneNumber</td>
-                    <td>@member.getDateJoined</td>
-                    <td>@member.getHandicap</td>
-                    <td>@member.getMembershipId</td>
-                </tr>
-                }
+                <tbody id="myTable">
+                    @for(member<-members){
+                    <tr class="small">
+                        <td>@member.getMemberId</td>
+                        <td>@member.getLastName</td>
+                        <td>@member.getFirstName</td>
+                        <td>@member.getAddress</td>
+                        <td>@member.getCity</td>
+                        <td>@member.getStateId</td>
+                        <td>@member.getPhoneNumber</td>
+                        <td>@member.getDateJoined</td>
+                        <td>@member.getHandicap</td>
+                        <td>@member.getMembershipId</td>
+
+                    </tr>
+                    }
+                </tbody>
             </table>
         </div>
+        <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+
+
+        </script>
     </body>
 </html>

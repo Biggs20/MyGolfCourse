@@ -7,6 +7,7 @@
 
 GET     /login                          controllers.SessionController.getLogin
 POST    /login                          controllers.SessionController.postLogin
+GET     /admin                          controllers.SessionController.getAdmin
 
 GET     /amenity                        controllers.AmenityController.getAmenity
 GET     /contactinfo                    controllers.HomeController.getContactInfo
