@@ -23,7 +23,7 @@ public class AmenityController extends Controller
         this.formFactory = formFactory;
     }
 
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public Result getAmenity()
     {
         TypedQuery<Amenity> query = db.em().createQuery("SELECT a FROM Amenity a ORDER BY amenityId", Amenity.class);
@@ -33,7 +33,7 @@ public class AmenityController extends Controller
     }
 
 
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public Result getRestaurant()
     {
         TypedQuery<Amenity> query = db.em().createQuery("SELECT a FROM Amenity a WHERE amenityId = 3", Amenity.class);
@@ -43,7 +43,7 @@ public class AmenityController extends Controller
     }
 
 
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public Result getFitnessCenter()
     {
         TypedQuery<Amenity> query = db.em().createQuery("SELECT a FROM Amenity a WHERE amenityId = 2", Amenity.class);
@@ -53,7 +53,7 @@ public class AmenityController extends Controller
     }
 
 
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public Result getPool()
     {
         TypedQuery<Amenity> query = db.em().createQuery("SELECT a FROM Amenity a WHERE amenityId = 4", Amenity.class);
@@ -63,7 +63,7 @@ public class AmenityController extends Controller
     }
 
 
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public Result getRestaurantMenu()
     {
         return ok(views.html.restaurantmenu.render());

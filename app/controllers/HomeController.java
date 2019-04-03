@@ -27,7 +27,7 @@ public class HomeController extends Controller
     }
 
 
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public Result getHome()
     {
         WeatherResult weatherResult = null;
@@ -56,7 +56,7 @@ public class HomeController extends Controller
         String realSpeed = "" + wind;
         String normalSpeed = realSpeed.substring(0, 2);
 
-        if(realSpeed.length() < 5)
+        if (realSpeed.length() < 5)
         {
             normalSpeed = realSpeed.substring(0, 1);
         }
@@ -64,7 +64,7 @@ public class HomeController extends Controller
         return ok(views.html.home.render(normalTemp, normalSpeed));
     }
 
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public Result getContactInfo()
     {
         return ok(views.html.contactinfo.render());

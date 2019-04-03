@@ -70,7 +70,19 @@ public class ProductController extends Controller
 
         db.em().persist(product);
 
-        return ok("Saved");
+        return ok(views.html.productadd.render());
+    }
+
+
+    @Transactional
+    public Result postProductDelete(int productId)
+    {
+        TypedQuery<Product> query = db.em().createQuery("SELECT p FROM Product p WHERE productId = :productId", Product.class);
+        query.setParameter("productId", productId);
+        Product product = query.getSingleResult();
+        db.em().remove(product);
+
+        return ok("DELETED");
     }
 
 
@@ -89,7 +101,7 @@ public class ProductController extends Controller
     public Result getOrderDetail()
     {
         TypedQuery<Orders> query = db.em().createQuery("SELECT NEW Orders(od.orderNumber, od.productId, od.memberId, od.quantity, od.extendedPrice, od.unitPrice, od.datePurchased, m.firstName, m.lastName) FROM OrderDetail od JOIN Member m ON od.memberId = m.memberId " +
-                                                               "ORDER BY datePurchased DESC", Orders.class);
+                "ORDER BY datePurchased DESC", Orders.class);
         List<Orders> orders = query.getResultList();
         return ok(views.html.orders.render(orders));
     }

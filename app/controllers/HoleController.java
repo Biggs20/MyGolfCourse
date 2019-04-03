@@ -23,7 +23,7 @@ public class HoleController extends Controller
         this.formFactory = formFactory;
     }
 
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public Result getCourse()
     {
         TypedQuery<Hole> query = db.em().createQuery("SELECT h FROM Hole h ORDER BY holeNumber", Hole.class);

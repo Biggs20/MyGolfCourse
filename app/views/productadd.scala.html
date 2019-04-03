@@ -5,6 +5,7 @@
         <title>Add Product</title>
         <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
         <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/adminBG.css">
     </head>
     <body>
         <!-- Navigation -->
@@ -78,11 +79,15 @@
             <form method="post">@helper.CSRF.formField
                 <input type="text" name="productName"><label> Product Name</label>
                 <br/>
+                <br/>
                 <input type="text" name="price"><label> Price</label>
+                <br/>
                 <br/>
                 <input type="text" name="brand"><label> Brand</label>
                 <br/>
+                <br/>
                 <input type="text" name="category"><label> Category</label>
+                <br/>
                 <br/>
                 <input type="submit" value="save">
             </form>

@@ -40,7 +40,7 @@ public class MemberController extends Controller
 
 
     //routes to receive member sign up page
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public Result getMemberAdd()
     {
         return ok(views.html.memberadd.render());
@@ -86,5 +86,17 @@ public class MemberController extends Controller
         db.em().persist(member);
 
         return ok("Saved");
+    }
+
+
+    @Transactional
+    public Result postMemberDelete(int memberId)
+    {
+        TypedQuery<Member> query = db.em().createQuery("SELECT m FROM Member m WHERE memberId = :memberId", Member.class);
+        query.setParameter("memberId", memberId);
+        Member member = query.getSingleResult();
+        db.em().remove(member);
+
+        return ok("DELETED");
     }
 }
