@@ -9,7 +9,8 @@ import java.time.LocalDate;
 @Entity
 public class Member
 {
-    @Id @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int memberId;
 
     private String lastName;
@@ -117,3 +118,5 @@ public class Member
         this.handicap = handicap;
     }
 }
+
+

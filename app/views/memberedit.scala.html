@@ -1,12 +1,10 @@
-@(members : List[Member])
+@(member : Member)
 @doctype.render
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Members</title>
+        <title>Employee Edit</title>
         <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
-        <script src="/assets/lib/jquery/jquery.min.js"></script>
-        <script src="/assets/lib/popper.js/umd/popper.min.js"></script>
         <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="/assets/stylesheets/adminBG.css">
     </head>
@@ -62,10 +60,10 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Admin Tools:</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="memberlist">Members</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="memberadd">Member Sign Up</a>
                 </li>
                 <li class="nav-item">
@@ -74,76 +72,31 @@
                 <li class="nav-item">
                     <a class="nav-link" href="productadd">Update Products</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
-                </li>
             </ul>
         </nav>
-        <br/>
-        <!-- Page Content -->
-        <div class="container">
-        </div>
-        <!-- /.container -->
-        <div class="container">
-            <div align="center">
-                <div class="btn-group">
-                    <a href="memberadd" class="btn btn-dark" role="button">Add Member</a>
-                    <a href="#" class="btn btn-dark" role="button">Remove Member</a>
-                </div>
-            </div>
-            <h1>Members</h1>
-
-            <input class="form-inline" id="myInput" type="text" placeholder="Search Members">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Member Id</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Address</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>Phone</th>
-                        <th>Date Joined</th>
-                        <th>Handicap</th>
-                        <th>Membership Id</th>
-                    </tr>
-                </thead>
-                <tbody id="myTable">
-                    @for(member<-members){
-                    <tr class="small">
-                        <td>@member.getMemberId</td>
-                        <td>@member.getLastName</td>
-                        <td>@member.getFirstName</td>
-                        <td>@member.getAddress</td>
-                        <td>@member.getCity</td>
-                        <td>@member.getStateId</td>
-                        <td>@member.getPhoneNumber</td>
-                        <td>@member.getDateJoined</td>
-                        <td>@member.getHandicap</td>
-                        <td>@member.getMembershipId</td>
-
-                    </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-        <script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-
-
-
-
-
-
-
-        </script>
+        <p>Editing @member.getFirstName @member.getLastName</p>
+        <form method="post" enctype="multipart/form-data">
+            @helper.CSRF.formField
+            <div class="form-group">
+                <input type="text" value="@member.getFirstName" name="firstName"><label>First Name</label>
+                <br/>
+                <input type="text" value="@member.getLastName" name="lastName"><label>Last Name</label>
+                <br/>
+                <input type="text" value="@member.getAddress" name="address"><label>Address</label>
+                <br/>
+                <input type="text" value="@member.getCity" name="city"><label>City</label>
+                <br/>
+                <input type="date" value="@member.getStateId" name="state"><label>State</label>
+                <br/>
+                <input type="text" value="@member.getPhoneNumber" name="phoneNumber"><label>Phone Number</label>
+                <br/>
+                <input type="text" value="@member.getDateJoined" name="dateJoined"><label>Date Joined</label>
+                <br/>
+                <input type="text" value="@member.getMembershipId" name="membershipId"><label>Membership Level</label>
+                <br/>
+                <input type="text" value="@member.getHandicap" name="handicap"><label>Handicap</label>
+                <br/>
+                <input type="submit" value="save">
+        </form>
     </body>
 </html>

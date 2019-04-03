@@ -1,5 +1,6 @@
 package controllers;
 
+import com.google.common.io.Files;
 import models.Member;
 import play.Logger;
 import play.data.DynamicForm;
@@ -7,10 +8,12 @@ import play.data.FormFactory;
 import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
 import play.mvc.Controller;
+import play.mvc.Http;
 import play.mvc.Result;
 
 import javax.inject.Inject;
 import javax.persistence.TypedQuery;
+import java.io.File;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -99,4 +102,50 @@ public class MemberController extends Controller
 
         return ok("DELETED");
     }
+
+
+    @Transactional(readOnly = true)
+    public Result getMemberEdit(int memberId)
+    {
+        TypedQuery<Member> query = db.em().createQuery("SELECT m FROM Member m WHERE memberId = :memberId", Member.class);
+        query.setParameter("memberId", memberId);
+        Member member = query.getSingleResult();
+
+        return ok(views.html.memberedit.render(member));
+    }
+
+    @Transactional
+    public Result postMemberEdit(int memberId)
+    {
+        TypedQuery<Member> query = db.em().createQuery("SELECT m FROM Member m WHERE memberId = :memberId", Member.class);
+        query.setParameter("memberId", memberId);
+        Member member = query.getSingleResult();
+
+        DynamicForm form = formFactory.form().bindFromRequest();
+
+        String lastName = form.get("lastName");
+        String firstName = form.get("firstName");
+        String address = form.get("address");
+        String city = form.get("city");
+        String stateId = form.get("stateId");
+        String phoneNumber = form.get("phoneNumber");
+        LocalDate dateJoined = LocalDate.parse(form.get("dateJoined"));
+        int membershipId = Integer.parseInt(form.get("membershipId"));
+        int handicap = Integer.parseInt(form.get("handicap"));
+
+        member.setLastName(lastName);
+        member.setFirstName(firstName);
+        member.setAddress(address);
+        member.setCity(city);
+        member.setStateId(stateId);
+        member.setPhoneNumber(phoneNumber);
+        member.setDateJoined(dateJoined);
+        member.setMembershipId(membershipId);
+        member.setHandicap(handicap);
+
+        db.em().persist(member);
+
+        return ok("saved");
+    }
+
 }
