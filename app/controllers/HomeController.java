@@ -1,5 +1,6 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import models.Weather.WeatherResult;
 import play.Logger;
@@ -41,6 +42,7 @@ public class HomeController extends Controller
             Logger.debug("weather api status: " + request.getResponseCode());
 
             ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
             weatherResult = objectMapper.readValue(url, WeatherResult.class);
         } catch (Exception e)
         {
