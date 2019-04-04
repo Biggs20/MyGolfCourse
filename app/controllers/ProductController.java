@@ -1,5 +1,6 @@
 package controllers;
 
+import models.OrderDetail;
 import models.Orders;
 import models.Product;
 import play.Logger;
@@ -13,7 +14,9 @@ import play.mvc.Result;
 import javax.inject.Inject;
 import javax.persistence.TypedQuery;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Random;
 
 
 public class ProductController extends Controller
@@ -104,5 +107,50 @@ public class ProductController extends Controller
                 "ORDER BY datePurchased DESC", Orders.class);
         List<Orders> orders = query.getResultList();
         return ok(views.html.orders.render(orders));
+    }
+
+
+    @Transactional(readOnly = true)
+    public Result getNewOrder()
+    {
+        return ok(views.html.neworder.render());
+    }
+
+
+    @Transactional
+    public Result postNewOrder()
+    {
+
+        Random random = new Random();
+        int randomNumber = random.nextInt((9999999) - 9000000);
+
+        OrderDetail orderDetail = new OrderDetail();
+
+        DynamicForm form = formFactory.form().bindFromRequest();
+        int productId = Integer.parseInt(form.get("productId"));
+        int memberId = Integer.parseInt(form.get("memberId"));
+        int quantity = Integer.parseInt(form.get("quantity"));
+        BigDecimal extendedPrice = new BigDecimal(form.get("extendedPrice"));
+        BigDecimal unitPrice = new BigDecimal(form.get("unitPrice"));
+        LocalDate datePurchased = LocalDate.parse(form.get("datePurchased"));
+
+        Logger.debug(String.valueOf(productId));
+        Logger.debug(String.valueOf(memberId));
+        Logger.debug(String.valueOf(quantity));
+        Logger.debug(String.valueOf(datePurchased));
+        Logger.debug(String.valueOf(extendedPrice));
+        Logger.debug(String.valueOf(unitPrice));
+
+        orderDetail.setOrderNumber(randomNumber);
+        orderDetail.setProductId(productId);
+        orderDetail.setMemberId(memberId);
+        orderDetail.setQuantity(quantity);
+        orderDetail.setExtendedPrice(extendedPrice);
+        orderDetail.setUnitPrice(unitPrice);
+        orderDetail.setDatePurchased(datePurchased);
+
+        db.em().persist(orderDetail);
+
+        return ok("Saved");
     }
 }

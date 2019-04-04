@@ -14,8 +14,6 @@ public class OrderDetail
     private int productId;
     private int memberId;
     private int quantity;
-    private String brand;
-    private String category;
     private BigDecimal extendedPrice;
     private BigDecimal unitPrice;
     private LocalDate datePurchased;
@@ -55,13 +53,38 @@ public class OrderDetail
         return datePurchased;
     }
 
-    public String getBrand()
+    public void setOrderNumber(int orderNumber)
     {
-        return brand;
+        this.orderNumber = orderNumber;
     }
 
-    public String getCategory()
+    public void setProductId(int productId)
     {
-        return category;
+        this.productId = productId;
+    }
+
+    public void setMemberId(int memberId)
+    {
+        this.memberId = memberId;
+    }
+
+    public void setQuantity(int quantity)
+    {
+        this.quantity = quantity;
+    }
+
+    public void setExtendedPrice(BigDecimal extendedPrice)
+    {
+        this.extendedPrice = extendedPrice;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice)
+    {
+        this.unitPrice = unitPrice;
+    }
+
+    public void setDatePurchased(LocalDate datePurchased)
+    {
+        this.datePurchased = datePurchased;
     }
 }

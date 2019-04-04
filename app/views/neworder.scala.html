@@ -1,15 +1,11 @@
-@(orders : List[Orders])
 @doctype.render
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <title>Member Sign Up</title>
         <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/adminBG.css">
-        <script src="/assets/lib/jquery/jquery.min.js"></script>
-        <script src="/assets/lib/popper.js/umd/popper.min.js"></script>
         <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
-        <title>Orders</title>
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/adminBG.css">
     </head>
     <body>
         <!-- Navigation -->
@@ -66,10 +62,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="memberlist">Members</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="memberadd">Member Sign Up</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="orders">Orders</a>
                 </li>
                 <li class="nav-item">
@@ -78,70 +74,23 @@
             </ul>
         </nav>
         <div class="container">
+            <h2>New Order Information</h2>
             <br/>
-
+            <form method="post">@helper.CSRF.formField
+                <input type="text" name="productId"><label> Product Id</label>
+                <br/>
+                <input type="text" name="memberId"><label> Member Id</label>
+                <br/>
+                <input type="text" name="quantity"><label> Quantity</label>
+                <br/>
+                <input type="date" name="datePurchased"><label> Date Purchased</label>
+                <br/>
+                <input type="text" name="unitPrice"><label> Unit Price</label>
+                <br/>
+                <input type="text" name="extendedPrice"><label> Extended Price</label>
+                <br/>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
         </div>
-        <!-- /.container -->
-        <div class="container">
-            <div align="center">
-                <div class="btn-group">
-                    <a href="neworder" class="btn btn-dark" role="button">New Order</a>
-                    <a href="#" class="btn btn-dark" role="button">Edit/Remove Order</a>
-                </div>
-            </div>
-            <h1>Orders</h1>
-            <input class="form-inline" id="myInput" type="text" placeholder="Search Orders">
-            <table class="table table-striped">
-                <thead class="thead-secondary">
-
-                    <tr>
-                        <th>Order Number</th>
-                        <th>Last Name</th>
-                        <th>ProductId</th>
-                        <th>MemberId</th>
-                        <th>Quantity</th>
-                        <th>Extended Price</th>
-                        <th>Unit Price</th>
-                        <th>Date Purchased</th>
-                    </tr>
-                </thead>
-                <tbody id="myTable">
-                @for(order<-orders){
-                <tr class="small">
-                    <td>@order.getOrderNumber</td>
-                    <td>@order.getLastName</td>
-                    <td>@order.getProductId</td>
-                    <td>@order.getMemberId</td>
-                    <td>@order.getQuantity</td>
-                    <td>@order.getExtendedPrice</td>
-                    <td>@order.getUnitPrice</td>
-                    <td>@order.getDatePurchased</td>
-                </tr>
-                }
-                </tbody>
-            </table>
-        </div>
-        <div id="main-container">
-            <div id="sidebar">
-                <a href="memberlist">Members</a>
-                <a href="">Member Sign Up</a>
-                <a href="orders">Orders</a>
-                <a href="productadd">Edit Store</a>
-                <a href="#">Link 4</a>
-                <a href="#">Link 5</a>
-            </div>
-            <div id="content">Content Area</div>
-        </div>
-        <script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-
-        </script>
     </body>
 </html>
