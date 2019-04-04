@@ -104,6 +104,7 @@
                         <th>Date Joined</th>
                         <th>Handicap</th>
                         <th>Membership Id</th>
+
                     </tr>
                 </thead>
                 <tbody id="myTable">
@@ -119,7 +120,9 @@
                         <td>@member.getDateJoined</td>
                         <td>@member.getHandicap</td>
                         <td>@member.getMembershipId</td>
-
+                        <th>
+                            <a href="memberedit/@member.getMemberId" class="btn btn-dark" role="button">Edit</a>
+                        </th>
                     </tr>
                     }
                 </tbody>
