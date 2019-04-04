@@ -6,7 +6,6 @@ import play.data.DynamicForm;
 import play.data.FormFactory;
 import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
-import play.mvc.Controller;
 import play.mvc.Result;
 
 import javax.inject.Inject;
@@ -14,7 +13,7 @@ import javax.persistence.TypedQuery;
 import java.time.LocalDate;
 import java.util.List;
 
-public class MemberController extends Controller
+public class MemberController extends BaseController
 {
     private JPAApi db;
     private FormFactory formFactory;
@@ -35,7 +34,14 @@ public class MemberController extends Controller
         TypedQuery<Member> query = db.em().createQuery("SELECT m FROM Member m ORDER BY memberId", Member.class);
         List<Member> members = query.getResultList();
 
-        return ok(views.html.memberlist.render(members));
+        Result result = redirect("/login");
+
+        if (isLoggedIn())
+        {
+            result = ok(views.html.memberlist.render(members));
+        }
+
+        return result;
     }
 
 
@@ -43,7 +49,14 @@ public class MemberController extends Controller
     @Transactional(readOnly = true)
     public Result getMemberAdd()
     {
-        return ok(views.html.memberadd.render());
+        Result result = redirect("/login");
+
+        if (isLoggedIn())
+        {
+            result = ok(views.html.memberadd.render());
+        }
+
+        return result;
     }
 
 
@@ -88,10 +101,17 @@ public class MemberController extends Controller
         return ok("Saved");
     }
 
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public Result getRemoveMember()
     {
-        return ok(views.html.removemember.render());
+        Result result = redirect("/login");
+
+        if (isLoggedIn())
+        {
+            result = ok(views.html.removemember.render());
+        }
+
+        return result;
     }
 
 
@@ -114,7 +134,14 @@ public class MemberController extends Controller
         query.setParameter("memberId", memberId);
         Member member = query.getSingleResult();
 
-        return ok(views.html.memberedit.render(member));
+        Result result = redirect("/login");
+
+        if (isLoggedIn())
+        {
+            result = ok(views.html.memberedit.render(member));
+        }
+
+        return result;
     }
 
     @Transactional

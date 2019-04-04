@@ -6,14 +6,13 @@ import play.data.DynamicForm;
 import play.data.FormFactory;
 import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
-import play.mvc.Controller;
 import play.mvc.Result;
 
 import javax.inject.Inject;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-public class SessionController extends Controller
+public class SessionController extends BaseController
 {
     private JPAApi db;
     private FormFactory formFactory;
@@ -35,14 +34,14 @@ public class SessionController extends Controller
     public Result postLogin()
     {
         DynamicForm form = formFactory.form().bindFromRequest();
-        String username = form.get("username");
+        String userName = form.get("userName");
 
-        String sql = "SELECT m FROM Member m WHERE lastName = :username";
+        String sql = "SELECT m FROM Member m WHERE userName = :userName";
 
         Logger.debug(sql);
 
         TypedQuery<Member> query = db.em().createQuery(sql, Member.class);
-        query.setParameter("username", username);
+        query.setParameter("userName", userName);
 
         List<Member> members = query.getResultList();
 
@@ -51,10 +50,13 @@ public class SessionController extends Controller
         if (members.size() == 1)
         {
             Member member = members.get(0);
-            result = redirect("/member/" + member.getMemberId());
+            result = redirect("/admin");
+            login(member);
+
         }
         else
         {
+            logout();
             String message = "Incorrect username or password. Please try again.";
             result = ok(views.html.login.render(message));
         }
@@ -65,6 +67,13 @@ public class SessionController extends Controller
     @Transactional(readOnly = true)
     public Result getAdmin()
     {
-        return ok(views.html.admin.render());
+        Result result = redirect("/login");
+
+        if (isLoggedIn())
+        {
+            result = ok(views.html.admin.render());
+        }
+
+        return result;
     }
 }

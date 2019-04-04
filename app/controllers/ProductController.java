@@ -8,7 +8,6 @@ import play.data.DynamicForm;
 import play.data.FormFactory;
 import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
-import play.mvc.Controller;
 import play.mvc.Result;
 
 import javax.inject.Inject;
@@ -19,7 +18,7 @@ import java.util.List;
 import java.util.Random;
 
 
-public class ProductController extends Controller
+public class ProductController extends BaseController
 {
     private JPAApi db;
     private FormFactory formFactory;
@@ -47,7 +46,14 @@ public class ProductController extends Controller
     @Transactional(readOnly = true)
     public Result getProductAdd()
     {
-        return ok(views.html.productadd.render());
+        Result result = redirect("/login");
+
+        if (isLoggedIn())
+        {
+            result = ok(views.html.productadd.render());
+        }
+
+        return result;
     }
 
 
@@ -73,7 +79,14 @@ public class ProductController extends Controller
 
         db.em().persist(product);
 
-        return ok(views.html.productadd.render());
+        Result result = redirect("/login");
+
+        if (isLoggedIn())
+        {
+            result = ok(views.html.productadd.render());
+        }
+
+        return result;
     }
 
 
@@ -106,14 +119,29 @@ public class ProductController extends Controller
         TypedQuery<Orders> query = db.em().createQuery("SELECT NEW Orders(od.orderNumber, od.productId, od.memberId, od.quantity, od.extendedPrice, od.unitPrice, od.datePurchased, m.firstName, m.lastName) FROM OrderDetail od JOIN Member m ON od.memberId = m.memberId " +
                 "ORDER BY datePurchased DESC", Orders.class);
         List<Orders> orders = query.getResultList();
-        return ok(views.html.orders.render(orders));
+
+        Result result = redirect("/login");
+
+        if (isLoggedIn())
+        {
+            result = ok(views.html.orders.render(orders));
+        }
+
+        return result;
     }
 
 
     @Transactional(readOnly = true)
     public Result getNewOrder()
     {
-        return ok(views.html.neworder.render());
+        Result result = redirect("/login");
+
+        if (isLoggedIn())
+        {
+            result = ok(views.html.neworder.render());
+        }
+
+        return result;
     }
 
 
@@ -162,7 +190,14 @@ public class ProductController extends Controller
         query.setParameter("orderNumber", orderNumber);
         OrderDetail orderDetail = query.getSingleResult();
 
-        return ok(views.html.orderedit.render(orderDetail));
+        Result result = redirect("/login");
+
+        if (isLoggedIn())
+        {
+            result = ok(views.html.orderedit.render(orderDetail));
+        }
+
+        return result;
     }
 
     @Transactional

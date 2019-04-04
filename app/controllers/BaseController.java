@@ -22,7 +22,19 @@ public class BaseController extends Controller
         return session().containsKey(LOGGED_IN_MEMBER);
     }
 
-    public Integer getLoggedInEmployeeId()
+    public boolean isAdmin()
+    {
+        boolean isAdmin = false;
+
+        if (isLoggedIn() && getLoggedInMemberId() == 1)
+        {
+            isAdmin = true;
+        }
+
+        return isAdmin;
+    }
+
+    public Integer getLoggedInMemberId()
     {
         String memberIdText = session().get(LOGGED_IN_MEMBER);
 

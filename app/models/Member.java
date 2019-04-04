@@ -13,6 +13,8 @@ public class Member
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int memberId;
 
+    private String userName;
+    private String password;
     private String lastName;
     private String firstName;
     private String address;
@@ -116,6 +118,16 @@ public class Member
     public void setHandicap(int handicap)
     {
         this.handicap = handicap;
+    }
+
+    public String getUserName()
+    {
+        return userName;
+    }
+
+    public String getPassword()
+    {
+        return password;
     }
 }
 

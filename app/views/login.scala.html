@@ -62,9 +62,11 @@
             <p class="sign" align="center">Sign in</p>
             <form method="post" class="form1">
                 @helper.CSRF.formField
-                <input class="un " type="text" align="center" name="username" placeholder="username">
+                <input class="un " type="text" align="center" name="userName" placeholder="userName">
                 <input class="pass" type="password" align="center" name="password" placeholder="password">
-                <a class="submit" align="center">Sign in</a>
+                <center>
+                    <input type="submit" value="Login">
+                </center>
                 <br/>
                 <br/>
                 <center>
