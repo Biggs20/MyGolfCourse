@@ -89,4 +89,59 @@ public class Orders
     {
         return category;
     }
+
+    public void setOrderNumber(int orderNumber)
+    {
+        this.orderNumber = orderNumber;
+    }
+
+    public void setProductId(int productId)
+    {
+        this.productId = productId;
+    }
+
+    public void setMemberId(int memberId)
+    {
+        this.memberId = memberId;
+    }
+
+    public void setQuantity(int quantity)
+    {
+        this.quantity = quantity;
+    }
+
+    public void setBrand(String brand)
+    {
+        this.brand = brand;
+    }
+
+    public void setCategory(String category)
+    {
+        this.category = category;
+    }
+
+    public void setExtendedPrice(BigDecimal extendedPrice)
+    {
+        this.extendedPrice = extendedPrice;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice)
+    {
+        this.unitPrice = unitPrice;
+    }
+
+    public void setDatePurchased(LocalDate datePurchased)
+    {
+        this.datePurchased = datePurchased;
+    }
+
+    public void setFirstName(String firstName)
+    {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName)
+    {
+        this.lastName = lastName;
+    }
 }

@@ -153,4 +153,43 @@ public class ProductController extends Controller
 
         return ok("Saved");
     }
+
+
+    @Transactional(readOnly = true)
+    public Result getOrderEdit(int orderNumber)
+    {
+        TypedQuery<OrderDetail> query = db.em().createQuery("SELECT od FROM OrderDetail od WHERE orderNumber = :orderNumber", OrderDetail.class);
+        query.setParameter("orderNumber", orderNumber);
+        OrderDetail orderDetail = query.getSingleResult();
+
+        return ok(views.html.orderedit.render(orderDetail));
+    }
+
+    @Transactional
+    public Result postOrderEdit(int orderNumber)
+    {
+        TypedQuery<OrderDetail> query = db.em().createQuery("SELECT od FROM OrderDetail od WHERE orderNumber = :orderNumber", OrderDetail.class);
+        query.setParameter("orderNumber", orderNumber);
+        OrderDetail orderDetail = query.getSingleResult();
+
+        DynamicForm form = formFactory.form().bindFromRequest();
+
+        int productId = Integer.parseInt(form.get("productId"));
+        int memberId = Integer.parseInt(form.get("memberId"));
+        int quantity = Integer.parseInt(form.get("quantity"));
+        BigDecimal extendedPrice = new BigDecimal(form.get("extendedPrice"));
+        BigDecimal unitPrice = new BigDecimal(form.get("unitPrice"));
+        LocalDate datePurchased = LocalDate.parse(form.get("datePurchased"));
+
+        orderDetail.setProductId(productId);
+        orderDetail.setMemberId(memberId);
+        orderDetail.setQuantity(quantity);
+        orderDetail.setExtendedPrice(extendedPrice);
+        orderDetail.setUnitPrice(unitPrice);
+        orderDetail.setDatePurchased(datePurchased);
+
+        db.em().persist(orderDetail);
+
+        return ok("saved");
+    }
 }

@@ -31,6 +31,7 @@ public class HomeController extends Controller
     @Transactional(readOnly = true)
     public Result getHome()
     {
+
         WeatherResult weatherResult = null;
 
         //to get weather results

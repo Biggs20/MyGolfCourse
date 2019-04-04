@@ -22,6 +22,8 @@ POST    /memberedit/:id                 controllers.MemberController.postMemberE
 GET     /neworder                       controllers.ProductController.getNewOrder
 POST    /neworder                       controllers.ProductController.postNewOrder
 GET     /orders                         controllers.ProductController.getOrderDetail
+GET     /orderedit/:id                  controllers.ProductController.getOrderEdit(id:Integer)
+POST    /orderedit/:id                  controllers.ProductController.postOrderEdit(id:Integer)
 GET     /pool                           controllers.AmenityController.getPool
 GET     /productlist                    controllers.ProductController.getProducts
 GET     /productadd                     controllers.ProductController.getProductAdd

@@ -86,7 +86,7 @@
             <div align="center">
                 <div class="btn-group">
                     <a href="neworder" class="btn btn-dark" role="button">New Order</a>
-                    <a href="#" class="btn btn-dark" role="button">Edit/Remove Order</a>
+                    <a href="#" class="btn btn-dark" role="button">Delete Order</a>
                 </div>
             </div>
             <h1>Orders</h1>
@@ -113,9 +113,12 @@
                     <td>@order.getProductId</td>
                     <td>@order.getMemberId</td>
                     <td>@order.getQuantity</td>
-                    <td>@order.getExtendedPrice</td>
-                    <td>@order.getUnitPrice</td>
+                    <td>$@order.getExtendedPrice</td>
+                    <td>$@order.getUnitPrice</td>
                     <td>@order.getDatePurchased</td>
+                    <th>
+                        <a href="orderedit/@order.getOrderNumber" class="btn btn-dark" role="button">Edit</a>
+                    </th>
                 </tr>
                 }
                 </tbody>
