@@ -1,6 +1,5 @@
 package controllers;
 
-import com.google.common.io.Files;
 import models.Member;
 import play.Logger;
 import play.data.DynamicForm;
@@ -8,12 +7,10 @@ import play.data.FormFactory;
 import play.db.jpa.JPAApi;
 import play.db.jpa.Transactional;
 import play.mvc.Controller;
-import play.mvc.Http;
 import play.mvc.Result;
 
 import javax.inject.Inject;
 import javax.persistence.TypedQuery;
-import java.io.File;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -91,9 +88,15 @@ public class MemberController extends Controller
         return ok("Saved");
     }
 
+    @Transactional (readOnly = true)
+    public Result getRemoveMember()
+    {
+        return ok(views.html.removemember.render());
+    }
+
 
     @Transactional
-    public Result postMemberDelete(int memberId)
+    public Result postRemoveMember(int memberId)
     {
         TypedQuery<Member> query = db.em().createQuery("SELECT m FROM Member m WHERE memberId = :memberId", Member.class);
         query.setParameter("memberId", memberId);

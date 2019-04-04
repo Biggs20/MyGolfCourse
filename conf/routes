@@ -26,6 +26,8 @@ GET     /pool                           controllers.AmenityController.getPool
 GET     /productlist                    controllers.ProductController.getProducts
 GET     /productadd                     controllers.ProductController.getProductAdd
 POST    /productadd                     controllers.ProductController.postProductAdd
+GET     /removemember                   controllers.MemberController.getRemoveMember
+POST    /removemember/:id               controllers.MemberController.postRemoveMember(id:Integer)
 GET     /restaurant                     controllers.AmenityController.getRestaurant
 GET     /restaurantmenu                 controllers.AmenityController.getRestaurantMenu
 GET     /store                          controllers.ProductController.getProducts
