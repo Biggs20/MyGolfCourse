@@ -1,6 +1,7 @@
 package controllers;
 
 import models.OrderDetail;
+import models.OrderRequest;
 import models.Orders;
 import models.Product;
 import play.Logger;
@@ -226,5 +227,44 @@ public class ProductController extends BaseController
         db.em().persist(orderDetail);
 
         return ok("saved");
+    }
+
+
+    @Transactional(readOnly = true)
+    public Result getRequestOrder()
+    {
+        return ok(views.html.requestorder.render());
+    }
+
+
+    @Transactional
+    public Result postRequestOrder()
+    {
+
+        OrderRequest orderRequest = new OrderRequest();
+
+        DynamicForm form = formFactory.form().bindFromRequest();
+        int productId = Integer.parseInt(form.get("productId"));
+        int quantity = Integer.parseInt(form.get("quantity"));
+        int memberId = Integer.parseInt(form.get("memberId"));
+        LocalDate dateRequested = LocalDate.parse(form.get("dateRequested"));
+        String notes = form.get("notes");
+
+        Logger.debug(String.valueOf(productId));
+        Logger.debug(String.valueOf(quantity));
+        Logger.debug(String.valueOf(memberId));
+        Logger.debug(String.valueOf(dateRequested));
+        Logger.debug(notes);
+
+
+        orderRequest.setProductId(productId);
+        orderRequest.setQuantity(quantity);
+        orderRequest.setMemberId(memberId);
+        orderRequest.setDateRequested(dateRequested);
+        orderRequest.setNotes(notes);
+
+        db.em().persist(orderRequest);
+
+        return ok("Saved");
     }
 }

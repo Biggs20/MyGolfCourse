@@ -33,6 +33,8 @@ GET     /removemember                   controllers.MemberController.getRemoveMe
 POST    /removemember/:id               controllers.MemberController.postRemoveMember(id:Integer)
 GET     /restaurant                     controllers.AmenityController.getRestaurant
 GET     /restaurantmenu                 controllers.AmenityController.getRestaurantMenu
+GET     /requestorder                   controllers.ProductController.getRequestOrder
+POST    /requestorder                   controllers.ProductController.postRequestOrder
 GET     /store                          controllers.ProductController.getProducts
 
 GET     /map                            controllers.TestController.getMap

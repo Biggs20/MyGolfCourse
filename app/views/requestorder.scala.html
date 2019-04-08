@@ -1,35 +1,13 @@
-@(amenities : List[Amenity])
 @doctype.render
 <html lang="en">
     <head>
-        <title>19th Hole Bar & Grill</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
         <script src="/assets/lib/jquery/jquery.min.js"></script>
         <script src="/assets/lib/popper.js/umd/popper.min.js"></script>
         <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
-        <style>
-* {
-  box-sizing: border-box;
-}
-
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-        </style>
+        <title>Request Order</title>
     </head>
     <body>
         <!-- Navigation -->
@@ -52,7 +30,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="course">Golf Course</a>
                         </li>
-                        <li class="nav-item dropdown active">
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Amenities</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="restaurant">Restaurant</a>
@@ -61,7 +39,7 @@
                                 <a class="dropdown-item" href="amenity">Amenity Hours</a>
                             </div>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="productlist">Golf Shop</a>
                         </li>
                         <li class="nav-item">
@@ -75,24 +53,37 @@
             </div>
         </nav>
         <div class="container">
-            <center>
-                <h2>19th Hole Bar & Grill</h2>
-            </center>
             <div class="row">
-                <div class="column" style="background-color: white;">
-                    <img src="/assets/images/nineteenthHoleRestaurant.jpg" alt="Centennial1" width="500" height="300">
+                <div class="col mt-5 bg-secondary">
+                    <h2>Request an Order</h2>
+                    <br/>
+                    <form method="post">@helper.CSRF.formField
+                        <input type="text" name="productId"><label> Product Id</label>
+                        <br/>
+                        <input type="text" name="quantity"><label> Quantity</label>
+                        <br/>
+                        <input type="text" name="memberId"><label> Member Id</label>
+                        <br/>
+                        <input type="date" name="dateRequested"><label> Today's Date</label>
+                        <br/>
+                        <label for="notes">Additional Notes</label>
+                        <textarea class="form-control" name="notes" id="notes" maxlength="2000" rows="3"></textarea>
+                        <div class="mt-2">
+                            <button type="submit" value="save" class="btn btn-primary">Submit</button>
+                        </div>
+                        <br/>
+                    </form>
                 </div>
-                <div class="column" style="background-color: white;">
-                    <h3>Open Hours</h3>
+                <div class="col mt-5">
+                    <p>Phone: (501) 513-2522</p>
+                    <p>Email: golfshop.golf@@lindseymanagement.com</p>
+                </div>
 
-                    <p>Monday: 11:00 a.m. - 10:00 p.m.</p>
-                    <p>Tuesday thru Saturday: 11:00 a.m. - 10:00 p.m. </p>
-                    <p>Sunday: 11:00 a.m. - 8:00 p.m.</p>
-
-                    <h4>Phone: (501) 513-2528</h4>
-
-                    <a href="restaurantmenu" target="_blank" class="btn btn-info" role="button">Menu</a>
-
+                <div class="col">
+                    <div class="column mt-5">
+                        <img src="/assets/images/proshop.jpg" alt="Centennial1" width="500"
+                             height="350">
+                    </div>
                 </div>
             </div>
         </div>
