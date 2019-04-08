@@ -19,6 +19,7 @@ GET     /memberadd                      controllers.MemberController.getMemberAd
 POST    /memberadd                      controllers.MemberController.postMemberAdd
 GET     /memberedit/:id                 controllers.MemberController.getMemberEdit(id:Integer)
 POST    /memberedit/:id                 controllers.MemberController.postMemberEdit(id:Integer)
+GET     /membershipinformation          controllers.HomeController.getMembershipInformation
 GET     /neworder                       controllers.ProductController.getNewOrder
 POST    /neworder                       controllers.ProductController.postNewOrder
 GET     /orders                         controllers.ProductController.getOrderDetail

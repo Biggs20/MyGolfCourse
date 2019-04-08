@@ -73,4 +73,11 @@ public class HomeController extends Controller
         return ok(views.html.contactinfo.render());
     }
 
+
+    @Transactional(readOnly = true)
+    public Result getMembershipInformation()
+    {
+        return ok(views.html.membershipinformation.render());
+    }
+
 }
