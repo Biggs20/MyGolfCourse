@@ -1,14 +1,15 @@
+@(orderRequests : List[OrderRequest])
 @doctype.render
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title>Add Product</title>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/assets/stylesheets/adminBG.css">
         <script src="/assets/lib/jquery/jquery.min.js"></script>
         <script src="/assets/lib/popper.js/umd/popper.min.js"></script>
         <script src="/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+        <title>Order Requests</title>
     </head>
     <body>
         <!-- Navigation -->
@@ -65,10 +66,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="orders">Orders</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="orderrequest">Order Requests</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="productadd">Update Products</a>
                 </li>
                 <li class="nav-item">
@@ -77,23 +78,53 @@
             </ul>
         </nav>
         <div class="container">
-            <h2>Add Product</h2>
             <br/>
-            <form method="post">@helper.CSRF.formField
-                <input type="text" name="productName"><label> Product Name</label>
-                <br/>
-                <br/>
-                <input type="text" name="price"><label> Price</label>
-                <br/>
-                <br/>
-                <input type="text" name="brand"><label> Brand</label>
-                <br/>
-                <br/>
-                <input type="text" name="category"><label> Category</label>
-                <br/>
-                <br/>
-                <button type="submit" class="btn btn-primary">Add Product</button>
-            </form>
+
         </div>
+        <!-- /.container -->
+        <div class="container">
+            <h1>Order Requests</h1>
+            <input class="form-inline" id="myInput" type="text" placeholder="Search Order Requests">
+            <table class="table table-striped">
+                <thead class="thead-secondary">
+
+                    <tr>
+                        <th>Request Id</th>
+                        <th>Product Id</th>
+                        <th>Quantity</th>
+                        <th>Member Id</th>
+                        <th>Date Requested</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    @for(orderRequest<-orderRequests){
+                    <tr class="small">
+                        <td>@orderRequest.getRequestId</td>
+                        <td>@orderRequest.getProductId</td>
+                        <td>@orderRequest.getQuantity</td>
+                        <td>@orderRequest.getMemberId</td>
+                        <td>@orderRequest.getDateRequested</td>
+                        <td>@orderRequest.getNotes</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+
+
+
+        </script>
     </body>
 </html>

@@ -267,4 +267,14 @@ public class ProductController extends BaseController
 
         return ok("Saved");
     }
+
+
+    @Transactional(readOnly = true)
+    public Result getOrderRequest()
+    {
+        TypedQuery<OrderRequest> query = db.em().createQuery("SELECT o FROM OrderRequest o ORDER BY requestId", OrderRequest.class);
+        List<OrderRequest> orderRequests = query.getResultList();
+
+        return ok(views.html.orderrequest.render(orderRequests));
+    }
 }
