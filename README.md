@@ -6,6 +6,9 @@ This is a starter application to get you going on your final project.
 
 ## Running
 
+![final-project-store](https://user-images.githubusercontent.com/45952245/55928192-7c21ca00-5bdd-11e9-86de-85fc04b956bc.PNG)
+
+
 Run this using [sbt](http://www.scala-sbt.org/).  
 
 ```
