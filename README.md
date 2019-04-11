@@ -11,6 +11,8 @@ This is a starter application to get you going on your final project.
 
 Run this using [sbt](http://www.scala-sbt.org/).  
 
+![final-project-admin](https://user-images.githubusercontent.com/45952245/55928245-a96e7800-5bdd-11e9-9ff1-5d789880e65f.PNG)
+
 ```
 sbt run
 ```
