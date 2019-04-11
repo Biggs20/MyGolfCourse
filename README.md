@@ -2,6 +2,7 @@
 
 "My Golf Course" is a user webpage/ backend admin application for a golf course.
 * Update content for the golf club for people interested in the golf club
+* Displays specific information about the golf course (holes, yards from each tee box)
 * Allows members to browse & request orders from the golf shop
 * Admin tools to track orders, members, and update products sold in the golf shop
 
