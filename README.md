@@ -8,7 +8,7 @@
 ## Home Screen
 
 ![Final-Project-Home](https://user-images.githubusercontent.com/45952245/55928107-1e8d7d80-5bdd-11e9-88aa-45a56b96a808.PNG)
-* example of the home screen showing this years tournaments and membership info
+* example of the home screen showing this years tournaments and membership information
 
 ## Golf Shop
 
@@ -21,6 +21,7 @@ displays the admin view once an administrator logs in
 * Add, remove, edit member information
 * Add, remove, edit orders placed from the golf shop
 * Track order requests that members have placed through the 'Request Order' feature
+* Update product selection for the golf shop
 
 ## Order Requests
 ![final-project-order-request](https://user-images.githubusercontent.com/45952245/55928312-d884e980-5bdd-11e9-8679-a4e740561b95.PNG)
